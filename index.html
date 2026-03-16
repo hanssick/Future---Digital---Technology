@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Digital Future Technology">
+    <meta name="keywords" content="antene satelit, service IT, smart home, Bucuresti">
+    <meta name="description" content="Digital Future Technology - Servicii IT și Satelit în București.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Future Technology | Layout Grid Pro</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/900/900618.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==============================================================
+           CSS Variabile Globale
+           ============================================================== */
+        :root {
+            --primary-blue: #58a6ff;
+            --bg-dark: #0d1117;
+            --bg-panel: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --success-green: #238636;
+            --math-accent: #ff7b72;
+            --pure-black: #000000;
+            --pure-white: #ffffff;
+            --transparent-bg: transparent;
+
+            --page-spacing: 5%;
+            --grid-gap: 1.5rem;
+            --zone-padding: 1.5rem;
+            --shadow-elevation: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ==============================================================
+           CERINȚA 28 (Bonus): CSS RESET PROFESIONAL & REDEFINIRE (Unități Relative)
+           ============================================================== */
+        *, *::before, *::after { box-sizing: border-box; }
+        
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, math {
+            margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;
+        }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+        
+        /* Doar body și html folosesc unități fixe */
+        html { font-size: 18px; transition: font-size 0.4s ease-in-out; }
+        body { font-size: 18px; line-height: 1.6; background: var(--bg-dark); color: var(--text-main); font-family: 'Montserrat', Tahoma, sans-serif; scroll-behavior: smooth; }
+        
+        /* Restul elementelor folosesc unități relative (rem, em) */
+        h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.2rem; margin-bottom: 0.8rem; }
+        p { font-size: 1rem; margin-bottom: 1rem; }
+        small { font-size: 0.8rem; }
+        a { color: var(--primary-blue); text-decoration: none; }
+        
+        /* Redefinire Bold, Italic, Liste */
+        strong, b { font-weight: 700; color: var(--primary-blue); }
+        em, i { font-style: italic; opacity: 0.9; }
+        ul { list-style-type: square; margin-left: 2rem; margin-bottom: 1rem; font-size: 1rem; }
+        ol { list-style-type: decimal; margin-left: 2rem; margin-bottom: 1rem; font-size: 1rem; }
+        li { margin-bottom: 0.5rem; }
+
+        /* ==============================================================
+           STRUCTURĂ HEADER & MAIN
+           ============================================================== */
+        header {
+            background: var(--bg-panel); padding: var(--zone-padding) var(--page-spacing); border-bottom: 2px solid var(--primary-blue);
+            box-shadow: var(--shadow-elevation); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center;
+        }
+        nav ul { display: flex; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+        nav ul li { position: relative; }
+        nav ul li ul { display: none; position: absolute; background: var(--bg-panel); padding: var(--zone-padding); border: 1px solid var(--border-color); box-shadow: var(--shadow-elevation); }
+        nav ul li:hover ul { display: flex; flex-direction: column; }
+
+        .main-grid {
+            padding: 2rem var(--page-spacing); max-width: 1400px; margin: 0 auto; display: grid; gap: var(--grid-gap);
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-areas: "a1 a1 a1" "a3 a2 a4" "a5 a2 a4" "a5 a6 a7" "a8 a8 a8";
+        }
+        #zona1 { grid-area: a1; } #zona2 { grid-area: a2; } #zona3 { grid-area: a3; } #zona4 { grid-area: a4; } #zona5 { grid-area: a5; } #zona6 { grid-area: a6; } #zona7 { grid-area: a7; } #zona8 { grid-area: a8; }
+
+        .grid-section { background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: var(--zone-padding); box-shadow: var(--shadow-elevation); transition: transform 0.3s, border-color 0.3s; }
+        .grid-section:hover { border-color: var(--primary-blue); }
+        .placeholder { border: 1px dashed var(--primary-blue); }
+        .f-pattern { border-left: 5px solid var(--primary-blue); background: linear-gradient(90deg, var(--bg-panel) 0%, var(--bg-dark) 100%); }
+
+        /* ==============================================================
+           TABEL COMPLEX
+           ============================================================== */
+        .table-responsive { overflow-x: auto; width: 100%; margin-top: 1rem; }
+        table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+        caption { caption-side: bottom; padding: 1rem 0; font-style: italic; color: var(--primary-blue); font-size: 0.9rem; }
+        th, td { text-align: left; padding: 0.8rem; background-color: var(--transparent-bg); font-size: 1rem; }
+        thead th { border: 3px solid var(--border-color); color: var(--primary-blue); }
+        tbody td, tfoot th, tfoot td { border: 1px solid var(--border-color); }
+        tbody tr:nth-child(odd) { box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.03); color: var(--text-main); }
+        tbody tr:nth-child(even) { box-shadow: inset 0 0 15px rgba(88, 166, 255, 0.15); color: var(--primary-blue); }
+        tbody tr, tbody tr td { transition: background-color 0.75s ease, font-size 0.75s ease; }
+        tbody tr:hover { background-color: rgba(88, 166, 255, 0.2); }
+        tbody tr:hover td { font-size: 1.2em; }
+
+        /* ==============================================================
+           IFRAME FLEXBOX & MEDIA
+           ============================================================== */
+        .container-iframe { display: flex; flex-direction: row; gap: 1rem; margin-top: 1rem; align-items: flex-start; }
+        .taburi-iframe { display: flex; flex-direction: column; gap: 0.8rem; }
+        .taburi-iframe a {
+            display: flex; align-items: center; justify-content: center; width: 140px; height: 45px;
+            background-color: var(--bg-panel); border: 2px solid var(--primary-blue); color: var(--primary-blue);
+            font-weight: 600; text-decoration: none; border-radius: 0.3rem; text-align: center; transition: all 0.3s ease; font-size: 0.9rem;
+        }
+        .taburi-iframe a:hover { background-color: var(--primary-blue); color: var(--pure-white); box-shadow: 0 0 10px var(--primary-blue); transform: translateX(5px); }
+        img, iframe, embed, picture { width: 100%; min-width: 250px; max-width: 100%; border-radius: 0.5rem; }
+        .container-iframe iframe { flex: 1; height: 350px; border: 2px solid var(--border-color); box-shadow: var(--shadow-elevation); }
+        
+        .universe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--grid-gap); }
+        .cat-card { text-align: center; background: var(--bg-dark); padding: var(--zone-padding); border: 1px solid var(--border-color); border-radius: 0.5rem; }
+        .cat-card img { height: 10rem; object-fit: cover; }
+
+        /* ==============================================================
+           CERINȚA 29 (Bonus): STILIZARE AVANSATĂ MathML
+           ============================================================== */
+        .math-box { text-align: center; padding: 2rem; background: var(--pure-black); border-radius: 0.5rem; overflow-x: auto; margin-top: 1rem; }
+        math { font-size: 1.5rem; }
+        math mi { color: var(--primary-blue); font-weight: bold; font-style: italic; } /* Variabile (G, n, D) */
+        math mo { color: var(--success-green); padding: 0 0.2rem; } /* Operatori (=, dot) */
+        math mn { color: var(--math-accent); font-weight: bold; } /* Numere (2) */
+        math msup { color: var(--math-accent); } /* Exponenți */
+        math mfrac { border-bottom: 2px dashed var(--border-color); } /* Stilizare fractie */
+
+        footer { background: var(--bg-panel); padding: 2rem var(--page-spacing); text-align: center; border-top: 1px solid var(--border-color); box-shadow: var(--shadow-elevation); margin-top: 2rem; }
+
+        /* ==============================================================
+           CERINȚA 27: LINK BACK TO TOP (Complet CSS, fără imagini)
+           ============================================================== */
+        #link-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem; /* Fixat in stanga-jos */
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.6; /* Semi-transparent */
+            transition: opacity 0.5s ease; /* Tranzitie fixata la 500ms (300-700ms cerinta) */
+            z-index: 9999;
+            text-decoration: none;
+        }
+
+        /* Rombul creat din pseudo-element rotit */
+        #link-top::before {
+            content: "";
+            position: absolute;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: var(--bg-panel);
+            border: 2px solid var(--primary-blue);
+            transform: rotate(45deg); /* Forma de romb */
+            transition: background-color 0.5s ease, border-color 0.5s ease;
+            z-index: -1;
+        }
+
+        /* Triunghiul (Conul) centrat, cu distanță față de romb */
+        #triunghi {
+            width: 0;
+            height: 0;
+            border-top: none;
+            border-left: 0.6rem solid transparent;
+            border-right: 0.6rem solid transparent;
+            border-bottom: 1rem solid var(--primary-blue);
+            border-radius: 40%; /* Efect de con - bază rotunjită */
+            transition: border-bottom-color 0.5s ease;
+            margin-bottom: 0.2rem; /* Spațiu între con și marginea rombului */
+        }
+
+        /* Efecte Hover pe elemente */
+        #link-top:hover { opacity: 1; }
+        #link-top:hover::before { background-color: var(--primary-blue); border-color: var(--pure-white); }
+        #link-top:hover #triunghi { border-bottom-color: var(--pure-white); }
+
+        /* Tooltip-ul care apare la hover */
+        .tooltip-text {
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-panel);
+            color: var(--primary-blue);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--primary-blue);
+            border-radius: 0.3rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            pointer-events: none;
+        }
+
+        #link-top:hover .tooltip-text {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-0.5rem);
+        }
+
+        /* ==============================================================
+           MEDIA QUERIES (Responsive)
+           ============================================================== */
+        @media (max-width: 1024px) {
+            :root { --page-spacing: 3%; --grid-gap: 1rem; --zone-padding: 1.2rem; }
+            html { font-size: 16px; }
+            .main-grid { grid-template-columns: 1fr 1fr; grid-template-areas: "a1 a1" "a2 a2" "a3 a4" "a5 a6" "a7 a7" "a8 a8"; }
+            img, iframe, embed, picture { min-width: 200px; }
+        }
+
+        @media (max-width: 768px) {
+            :root { --page-spacing: 1%; --grid-gap: 0.5rem; --zone-padding: 1rem; }
+            html { font-size: 14px; }
+            header { flex-direction: column; text-align: center; gap: 1rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            .main-grid { display: flex; flex-direction: column; }
+            img, iframe, embed, picture { min-width: 150px; }
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .container-iframe { flex-direction: column; }
+            .taburi-iframe { flex-direction: row; flex-wrap: wrap; justify-content: center; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <hgroup>
+            <h1><a href="#"><i class="fa-solid fa-network-wired"></i> DIGITAL FUTURE TECHNOLOGY</a></h1>
+            <p>Infrastructură Digitală & Satelit</p>
+        </hgroup>
+        <nav>
+            <ul>
+                <li><a href="#top">Acasă</a>
+                    <ul>
+                        <li><a href="#zona1">Prezentare</a></li>
+                        <li><a href="#zona8">Magazin</a></li>
+                    </ul>
+                </li>
+                <li><a href="#zona3">Evenimente</a></li>
+                <li><a href="#zona8">Resurse</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="top" class="main-grid">
+
+        <section id="zona1" class="grid-section f-pattern">
+            <h2>Prezentare Digital Future</h2>
+            <p><strong>Suntem lideri în inovație tehnologică.</strong> Oferim soluții complexe de infrastructură pentru afaceri și locuințe inteligente.</p>
+            <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                <h3>Expertiza Noastră</h3>
+                <p>Implementăm sisteme TCP/IP, configurăm <abbr title="Microcontroller">Arduino</abbr> și oferim garanție completă. <i>Viitorul este acum!</i></p>
+            </div>
+            
+            <figure style="margin-top: 1.5rem;">
+                <picture title="Infrastructură">
+                    <source media="(min-width: 1024px)" srcset="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="Servere" style="max-height: 300px; object-fit: cover;">
+                </picture>
+                <figcaption>Sediul central: Hub-ul nostru de infrastructură.</figcaption>
+            </figure>
+        </section>
+
+        <section id="zona3" class="grid-section placeholder">
+            <h2>Calendar Evenimente</h2>
+            <p>Setați o alarmă pentru evenimentele noastre tehnice.</p>
+            <ul>
+                <li><time datetime="2026-06-15T10:00">15 Iunie</time> - Lansare Smart Home</li>
+                <li><time datetime="2026-07-20">20 Iulie</time> - Workshop IT</li>
+            </ul>
+            <p>Locuri disponibile: <meter value="80" min="0" max="100" low="30" high="70" optimum="10"></meter></p>
+        </section>
+
+        <section id="zona2" class="grid-section">
+            <h2>Proiecte & Mentenanță</h2>
+            <div class="table-responsive">
+                <table>
+                    <caption>Tabel 1. Situația Proiectelor Active și a Contractelor 2026</caption>
+                    <thead>
+                        <tr><th>Proiect / Client</th><th>Tehnologie Utilizată</th><th>Durată Contract</th><th>Status Curent</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Facultatea de Matematică</td><td>Networking Optic</td><td>6 Luni</td><td>Finalizat</td></tr>
+                        <tr><td rowspan="2">Ansamblu Rezidențial Nord</td><td>Sisteme IPTV & Satelit</td><td>12 Luni</td><td>Activ</td></tr>
+                        <tr><td>Smart Home Monitoring</td><td>12 Luni</td><td>În Desfășurare</td></tr>
+                        <tr><td>Mentenanță Server Central</td><td>Linux & Securitate</td><td>Permanent</td><td>Activ</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><th colspan="3">Total Proiecte Încheiate în Trimestrul I</th><td>42 Proiecte</td></tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section id="zona4" class="grid-section placeholder">
+            <h2>Anunțuri</h2>
+            <p>Verificați noile protocoale tehnice adăugate în documentație.</p>
+            <p style="color: var(--primary-blue);">
+                <strong><i class="fa-solid fa-gear fa-spin"></i> URGENT:</strong> Mentenanță la serverele principale în acest weekend!
+            </p>
+        </section>
+
+        <section id="zona5" class="grid-section placeholder">
+            <h2>Utilizatori Online</h2>
+            <ul>
+                <li>Admin_Ro - <i>Sistem Core</i></li>
+                <li>TechSupport_2 - <i>Verificare</i></li>
+            </ul>
+        </section>
+
+        <section id="zona6" class="grid-section placeholder">
+            <h2>Date Utilizator</h2>
+            <p>ID Sesiune: <strong>#LOREM992</strong></p>
+            <p>Acces: Privilegii standard. Modificare nivel acces indisponibilă.</p>
+        </section>
+
+        <section id="zona7" class="grid-section placeholder">
+            <h2>Status Server</h2>
+            <p>Uptime: <strong>99.98%</strong></p>
+            <p>Latență: 12ms</p>
+            <p>Încărcare CPU: <meter value="45" min="0" max="100" low="60" high="80" optimum="20"></meter></p>
+        </section>
+
+        <section id="zona8" style="grid-area: a8;">
+            
+            <div class="grid-section" style="margin-bottom: 1.5rem;">
+                <h2>Universurile Noastre</h2>
+                <div class="universe-grid">
+                    <article class="cat-card"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300" alt="Satelit"><h4>SATELIT & TV</h4></article>
+                    <article class="cat-card"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=300" alt="IT"><h4>IT & NETWORKING</h4></article>
+                    <article class="cat-card"><img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=300" alt="Electronica"><h4>ELECTRONICĂ</h4></article>
+                    <article class="cat-card"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=300" alt="Service"><h4>SERVICE</h4></article>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: var(--grid-gap);">
+                
+                <div class="grid-section" style="flex: 1; min-width: 300px;">
+                    <h2>Abonamente & Coș</h2>
+                    <div style="background:var(--bg-dark); padding:var(--zone-padding); margin-bottom:1rem; border:1px solid var(--border-color); display:flex; justify-content:space-between; border-radius: 0.5rem;">
+                        <span>Focus Sat - 35 RON</span>
+                        <button onclick="addToCart('Focus Sat', 35)" style="cursor:pointer; background:var(--primary-blue); color:var(--pure-white); border:none; padding:0.5rem 1rem; border-radius: 0.2rem;">Adaugă</button>
+                    </div>
+                    <div style="background:var(--bg-dark); padding:var(--zone-padding); border:1px dashed var(--primary-blue); border-radius: 0.5rem;">
+                        <h3>🛒 Coșul Tău</h3>
+                        <ul id="cart-items"><li>Coș gol</li></ul>
+                        <p>Total: <b id="total-price">0</b> RON</p>
+                    </div>
+                </div>
+
+                <div class="grid-section" style="flex: 1; min-width: 300px;">
+                    <h2>Formulă Tehnică</h2>
+                    <p>Calculul câștigului (Gain):</p>
+                    <div class="math-box">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>G</mi><mo>=</mo><mi>η</mi><mo>⋅</mo>
+                            <msup><mfenced><mfrac><mrow><mi>π</mi><mo>⋅</mo><mi>D</mi></mrow><mi>λ</mi></mfrac></mfenced><mn>2</mn></msup>
+                        </math>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: var(--grid-gap); margin-top: 1.5rem;">
+                <div class="grid-section" style="flex: 1; min-width: 300px;">
+                    <h2>Documentație (PDF)</h2>
+                    <embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" height="350px">
+                </div>
+                
+                <div class="grid-section" style="flex: 1; min-width: 300px;">
+                    <h2>Tutoriale Video</h2>
+                    <div class="container-iframe">
+                        <div class="taburi-iframe">
+                            <a href="https://www.youtube.com/embed/dQw4w9WgXcQ" target="ifr-video">Video Antene</a>
+                            <a href="https://www.youtube.com/embed/3JZ_D3ELwOQ" target="ifr-video">IT Service</a>
+                            <a href="https://www.youtube.com/embed/5PbPbt_L8-M" target="ifr-video">Video Principal</a>
+                        </div>
+                        <iframe name="ifr-video" src="https://www.youtube.com/embed/5PbPbt_L8-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-section" style="margin-top: 1.5rem;">
+                <h2>Harta Interactivă & FAQ</h2>
+                <details style="margin-bottom: 1.5rem; background: var(--bg-dark); padding: var(--zone-padding); border-radius: 0.5rem;">
+                    <summary style="cursor: pointer; font-weight: bold; color: var(--primary-blue);">Oferiți garanție?</summary>
+                    <p>Da, 12 luni. <a href="https://www.digitalfuture.ro/test#id" style="word-break: break-all;">Link extern</a>.</p>
+                </details>
+                <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=800" usemap="#techmap" alt="Harta">
+                <map name="techmap">
+                    <area shape="rect" coords="0,0,300,300" alt="Nav" href="#zona1">
+                </map>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <address style="font-style: normal; margin-bottom: 1.5rem;">
+            Tel: <a href="tel:+40722123456">+40 722 123 456</a> | 
+            Email: <a href="mailto:contact@digitalfuture.ro">contact@digitalfuture.ro</a><br>
+            Adresa: <a href="https://maps.google.com/?q=Facultatea+de+Matematica+si+Informatica+Bucuresti" target="_blank">Str. Academiei 14</a><br>
+            <a href="https://wa.me/40722123456" target="_blank" style="color:var(--success-green); font-weight:bold;">Contact WhatsApp</a>
+        </address>
+        <small>Copyright © 2026. Creat: <time datetime="2026-03-08">8 Martie 2026</time></small>
+    </footer>
+
+    <a href="#top" id="link-top" aria-label="Mergi sus">
+        <span class="tooltip-text">Mergi susul paginii</span>
+        <div id="triunghi"></div>
+    </a>
+
+    <script>
+        let total = 0;
+        function addToCart(item, price) {
+            const list = document.getElementById('cart-items');
+            if(total === 0) list.innerHTML = '';
+            const li = document.createElement('li');
+            li.textContent = item + " - " + price + " RON";
+            list.appendChild(li);
+            total += price;
+            document.getElementById('total-price').textContent = total;
+        }
+    </script>
+</body>
+</html>
