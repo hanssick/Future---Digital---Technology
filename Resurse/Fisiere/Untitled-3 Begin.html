@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Digital Future Technology">
+    <meta name="keywords" content="antene satelit, service IT, smart home, Bucuresti">
+    <meta name="description" content="Digital Future Technology - Servicii IT și Satelit în București.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Future Technology | Layout Grid Pro</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <hgroup>
+            <h1><a href="#"><i class="fa-solid fa-network-wired"></i> DIGITAL FUTURE TECHNOLOGY</a></h1>
+            <p>Infrastructură Digitală & Satelit</p>
+        </hgroup>
+        <nav>
+            <ul>
+                <li><a href="#top">Acasă</a>
+                    <ul>
+                        <li><a href="#zona1">Prezentare</a></li>
+                        <li><a href="#zona8">Magazin</a></li>
+                    </ul>
+                </li>
+                <li><a href="#zona3">Evenimente</a></li>
+                <li><a href="#zona8">Resurse</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="top" class="main-grid">
+        <section id="zona1" class="grid-section f-pattern">
+            <h2>Prezentare Digital Future</h2>
+            <p><strong>Suntem lideri în inovație tehnologică.</strong> Oferim soluții complexe de infrastructură.</p>
+            <figure>
+                <picture>
+                    <source media="(min-width: 1024px)" srcset="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="Servere">
+                </picture>
+            </figure>
+        </section>
+
+        <section id="zona2" class="grid-section">
+            <h2>Proiecte & Mentenanță</h2>
+            <div class="table-responsive">
+                <table>
+                    <caption>Tabel 1. Situația Proiectelor Active 2026</caption>
+                    <thead>
+                        <tr><th>Proiect</th><th>Tehnologie</th><th>Durată</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Facultatea Matematică</td><td>Networking</td><td>6 Luni</td><td>Finalizat</td></tr>
+                        <tr><td rowspan="2">Ansamblu Nord</td><td>IPTV</td><td>12 Luni</td><td>Activ</td></tr>
+                        <tr><td>Smart Home</td><td>12 Luni</td><td>Activ</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><th colspan="3">Total Proiecte</th><td>42</td></tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section id="zona3" class="grid-section placeholder"><h2>Evenimente</h2><p>Lorem ipsum...</p></section>
+        <section id="zona4" class="grid-section placeholder"><h2>Anunțuri</h2><i class="fa-solid fa-gear fa-spin"></i></section>
+        <section id="zona5" class="grid-section placeholder"><h2>Online</h2></section>
+        <section id="zona6" class="grid-section placeholder"><h2>Statistici</h2></section>
+        <section id="zona7" class="grid-section placeholder"><h2>Server</h2></section>
+
+        <section id="zona8">
+            <div class="grid-section">
+                <h2>Formulă Tehnică</h2>
+                <div class="math-box">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>G</mi><mo>=</mo><mi>η</mi><mo>⋅</mo>
+                        <msup><mfenced><mfrac><mrow><mi>π</mi><mo>⋅</mo><mi>D</mi></mrow><mi>λ</mi></mfrac></mfenced><mn>2</mn></msup>
+                    </math>
+                </div>
+            </div>
+
+            <div class="grid-section">
+                <h2>Tutoriale Video</h2>
+                <div class="container-iframe">
+                    <div class="taburi-iframe">
+                        <a href="https://www.youtube.com/embed/dQw4w9WgXcQ" target="ifr-video">Video Antene</a>
+                        <a href="https://www.youtube.com/embed/5PbPbt_L8-M" target="ifr-video">Video Principal</a>
+                    </div>
+                    <iframe name="ifr-video" src="https://www.youtube.com/embed/5PbPbt_L8-M" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <address>Contact: <a href="tel:+40722123456">0722 123 456</a></address>
+        <small>© 2026 Digital Future</small>
+    </footer>
+
+    <a href="#top" id="link-top">
+        <span class="tooltip-text">Mergi sus</span>
+        <div id="triunghi"></div>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
