@@ -1,0 +1,2309 @@
+/* ===============================================
+   BONUS 1 ETAPA 2: CSS RESET INTEGRAT
+   Meyer Reset + Redefiniri Custom
+   =============================================== */
+
+/* Meyer Reset Base */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ===============================================
+   REDEFINIRI CUSTOM
+   =============================================== */
+
+/* Box-sizing pentru toate elementele */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* HTML & Body - unități fixe doar aici */
+html {
+    font-size: 18px; /* Base font-size - se modifică în media queries */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+}
+
+/* Headings - dimensiuni relative */
+h1 { font-size: 2.5rem; font-weight: 900; line-height: 1.2; }
+h2 { font-size: 2rem; font-weight: 800; line-height: 1.3; }
+h3 { font-size: 1.75rem; font-weight: 700; line-height: 1.3; }
+h4 { font-size: 1.5rem; font-weight: 700; line-height: 1.4; }
+h5 { font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
+h6 { font-size: 1rem; font-weight: 600; line-height: 1.5; }
+
+/* Paragraphs - dimensiuni relative */
+p {
+    margin-bottom: 1em;
+    font-size: 1rem;
+}
+
+/* Links */
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Text formating - stil custom */
+b, strong {
+    font-weight: 700;
+}
+
+i, em {
+    font-style: italic;
+}
+
+small {
+    font-size: 0.875em;
+}
+
+/* Lists - bullet și indecși custom */
+ul {
+    list-style-position: inside;
+}
+
+ol {
+    list-style-position: inside;
+}
+
+ul li {
+    padding-left: 1em;
+}
+
+ol li {
+    padding-left: 1em;
+}
+
+/* Blockquote */
+blockquote {
+    padding-left: 1.5em;
+    margin: 1.5em 0;
+    font-style: italic;
+}
+
+/* Code */
+code, pre {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+}
+
+/* Table - stil custom */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+/* Forms */
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Iframe */
+iframe {
+    border: 0;
+}
+
+/* Figure */
+figure {
+    margin: 0;
+}
+
+figcaption {
+    font-size: 0.875em;
+    font-style: italic;
+    margin-top: 0.5em;
+}
+
+/* Address */
+address {
+    font-style: normal;
+}
+
+/* Details/Summary */
+summary {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* HR */
+hr {
+    border: 0;
+    height: 1px;
+    margin: 2em 0;
+}
+
+/* Scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus visible pentru accesibilitate */
+:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+    background-color: rgba(14, 165, 233, 0.3);
+}
+
+/* ===============================================
+   VARIABILE RESET - CONSISTENȚĂ
+   =============================================== */
+:root {
+    /* Spacing scale - toate relative */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Font weights */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-black: 900;
+    
+    /* Line heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.8;
+    
+    /* Border radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+}
+
+/* ===============================================
+   CSS VARIABLES & SCHEMA CROMATICĂ (A1 ETAPA 2)
+   =============================================== */
+:root {
+    --primary-blue: #0ea5e9;
+    --primary-dark: #0284c7;
+    --accent-cyan: #06b6d4;
+    --success-green: #10b981;
+    --warning-orange: #f59e0b;
+    --danger-red: #ef4444;
+    
+    --bg-dark: #0a0e27;
+    --bg-panel: #141829;
+    --bg-card: #1a1f3a;
+    --border-color: #2d3748;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    
+    --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+    --gradient-dark: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.3);
+    
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* ETAPA 2 - Grid Layout Variables */
+    --grid-gap: 1.5rem;
+    --zone-padding: 2rem;
+    --page-spacing: 5%;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-left: var(--page-padding); /* A6.a.1 - Spațiere stânga */
+    padding-right: var(--page-padding); /* A6.a.1 - Spațiere dreapta */
+}
+/* ===============================================
+   HEADER & NAVIGATION
+   =============================================== */
+header {
+    --page-padding: 3rem; /* A6.a.1 - Spațiere stânga/dreapta pagină */
+    background: rgba(20, 24, 41, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo-text h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.logo-text p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 0;
+    font-weight: 500;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: var(--primary-blue);
+    background: rgba(14, 165, 233, 0.1);
+}
+
+/* Dropdown Menu */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    min-width: 220px;
+    padding: 0.5rem;
+    box-shadow: var(--shadow-lg);
+    flex-direction: column;
+    gap: 0;
+}
+
+nav ul li:hover > ul {
+    display: flex;
+}
+
+nav ul li ul li a {
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+}
+
+/* ===============================================
+   SATELLITE ANIMATION
+   =============================================== */
+.satellite-animation {
+    position: fixed;
+    top: 80px;
+    right: 30px;
+    width: 120px;
+    height: 120px;
+    z-index: 999;
+    pointer-events: none;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.satellite-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.5));
+}
+
+.dish {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.signal-wave {
+    animation: wave 1.5s ease-out infinite;
+    transform-origin: center;
+}
+
+@keyframes wave {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ===============================================
+   HERO SECTION
+   =============================================== */
+.hero {
+    background: var(--gradient-dark);
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.5);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-outline:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+
+/* ===============================================
+   MAIN CONTAINER & GRID LAYOUT (ETAPA 2)
+   =============================================== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* GRID LAYOUT - Desktop (layout-5.png) */
+.main-grid {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "zona1 zona1 zona1"
+        "zona3 zona2 zona4"
+        "zona5 zona2 zona4"
+        "zona5 zona6 zona7"
+        "zona8 zona8 zona8";
+}
+
+/* Grid Areas */
+#zona1 { grid-area: zona1; }
+#zona2 { grid-area: zona2; }
+#zona3 { grid-area: zona3; }
+#zona4 { grid-area: zona4; }
+#zona5 { grid-area: zona5; }
+#zona6 { grid-area: zona6; }
+#zona7 { grid-area: zona7; }
+#zona8 { grid-area: zona8; }
+
+.grid-section {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: var(--zone-padding);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.grid-section:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-blue);
+}
+
+/* Placeholder sections */
+.placeholder {
+    border: 1px dashed var(--primary-blue);
+    background: rgba(14, 165, 233, 0.05);
+}
+
+/* F-Pattern pentru Zona 1 (prezentare cu text) */
+.f-pattern {
+    border-left: 5px solid var(--primary-blue);
+    background: linear-gradient(90deg, var(--bg-panel) 0%, var(--bg-dark) 100%);
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ETAPA 1 Banner */
+.etapa-banner {
+    background: var(--gradient-primary);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-glow);
+}
+
+.etapa-banner h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.etapa-banner p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.2rem;
+}
+
+/* ===============================================
+   PROMOTIONS BANNER
+   =============================================== */
+.promotions-banner {
+    background: var(--gradient-primary);
+    padding: 1rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-glow);
+    animation: pulse-banner 2s ease-in-out infinite;
+}
+
+@keyframes pulse-banner {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.promotions-banner h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.promotions-banner p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+/* ===============================================
+   BLOCKQUOTE
+   =============================================== */
+blockquote {
+    background: var(--bg-card);
+    border-left: 4px solid var(--primary-blue);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-muted);
+    border-radius: 8px;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* ===============================================
+   DESCRIPTION LIST
+   =============================================== */
+dl {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    margin: 2rem 0;
+}
+
+dt {
+    color: var(--primary-blue);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+dt:first-child {
+    margin-top: 0;
+}
+
+dd {
+    color: var(--text-muted);
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* ===============================================
+   CATEGORIES GRID
+   =============================================== */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.category-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition-normal);
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-glow);
+}
+
+.category-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition-normal);
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.05);
+}
+
+.category-content {
+    padding: 1.5rem;
+}
+
+.category-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.category-content p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Chapters overlay on hover */
+.chapters-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.category-card:hover .chapters-overlay {
+    display: flex;
+    opacity: 1;
+}
+
+.chapter-item {
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid var(--primary-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+    width: 90%;
+    text-align: center;
+}
+
+.chapter-item:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* ===============================================
+   PRODUCTS SECTION
+   =============================================== */
+.products-section {
+    margin-bottom: 4rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-md);
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    background: #000;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-normal);
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--success-green);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.product-info {
+    padding: 1.2rem;
+}
+
+.product-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+    min-height: 2.4rem;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+}
+
+.product-specs {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.add-to-cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Product Tooltip */
+.product-tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 14, 39, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    border: 2px solid var(--primary-blue);
+    border-radius: 10px;
+}
+
+.product-card:hover .product-tooltip {
+    display: flex;
+    opacity: 1;
+}
+
+.tooltip-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.tooltip-specs {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.tooltip-specs li {
+    margin-bottom: 0.5rem;
+    list-style: none;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.tooltip-specs li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success-green);
+    font-weight: bold;
+}
+
+.tooltip-price {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ===============================================
+   PDF SECTION
+   =============================================== */
+.pdf-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pdf-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: var(--transition-normal);
+}
+
+.pdf-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.pdf-icon {
+    font-size: 3rem;
+    color: var(--danger-red);
+    margin-bottom: 1rem;
+}
+
+.pdf-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.pdf-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.pdf-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--danger-red);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+}
+
+.pdf-download-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* ===============================================
+   TESTIMONIALS SECTION
+   =============================================== */
+.testimonials-section {
+    margin-bottom: 4rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.testimonial-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.quote-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    color: var(--primary-blue);
+    opacity: 0.2;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+}
+
+.author-info h4 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.author-info p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.rating {
+    color: var(--warning-orange);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* ===============================================
+   EVENTS TABLE (ETAPA 2 - STILIZARE AVANSATĂ)
+   =============================================== */
+.events-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+}
+
+caption {
+    caption-side: bottom;
+    padding: 1rem 0;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    background: transparent;
+}
+
+thead th {
+    background: var(--bg-dark);
+    color: var(--primary-blue);
+    font-weight: 700;
+    border: 3px solid var(--border-color);
+}
+
+/* Culori alternate cu box-shadow (ETAPA 2) */
+tbody tr:nth-child(odd) {
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.03);
+    color: var(--text-main);
+}
+
+tbody tr:nth-child(even) {
+    box-shadow: inset 0 0 15px rgba(14, 165, 233, 0.15);
+    color: var(--primary-blue);
+}
+
+/* Hover cu tranziție (ETAPA 2) */
+tbody tr,
+tbody tr td {
+    transition: background-color 0.75s ease, font-size 0.75s ease;
+}
+
+tbody tr:hover {
+    background-color: rgba(14, 165, 233, 0.2);
+}
+
+tbody tr:hover td {
+    font-size: 1.2em;
+}
+
+tfoot th, tfoot td {
+    background: var(--bg-dark);
+    font-weight: 700;
+    color: var(--primary-blue);
+    border: 1px solid var(--border-color);
+}
+
+/* ===============================================
+   DETAILS/SUMMARY
+   =============================================== */
+details {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--primary-blue);
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: var(--transition-fast);
+}
+
+summary:hover {
+    background: rgba(14, 165, 233, 0.1);
+}
+
+details[open] summary {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+details p {
+    color: var(--text-muted);
+    padding: 0.5rem;
+}
+
+/* ===============================================
+   METER
+   =============================================== */
+meter {
+    width: 100%;
+    height: 25px;
+    border-radius: 4px;
+}
+
+.meter-container {
+    margin: 1rem 0;
+}
+
+.meter-label {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* ===============================================
+   BONUS 2 ETAPA 2: MATHML STILIZAT COMPLEX
+   =============================================== */
+
+/* Container principal formule */
+.math-box {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, 
+        rgba(14, 165, 233, 0.1) 0%, 
+        rgba(6, 182, 212, 0.15) 50%, 
+        rgba(16, 185, 129, 0.1) 100%);
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 2rem 0;
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
+}
+
+.math-box h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+/* Containere individuale pentru fiecare formulă */
+.formula-container {
+    background: rgba(26, 31, 58, 0.6);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    backdrop-filter: blur(10px);
+}
+
+.formula-title {
+    color: var(--accent-cyan);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Stilizare generală MathML */
+math {
+    font-size: 2.2rem;
+    line-height: 2;
+}
+
+.math-formula {
+    margin: 1.5rem 0;
+}
+
+/* STILIZARE VARIABILE - ALBASTRU + ITALIC + BOLD */
+.math-variable,
+math mi:not([class]) {
+    color: #3b82f6 !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    font-size: 1.1em !important;
+}
+
+/* VARIABILE SPECIALE - CYAN + ITALIC + EXTRA BOLD */
+.math-variable-special {
+    color: #06b6d4 !important;
+    font-style: italic !important;
+    font-weight: 900 !important;
+    font-size: 1.2em !important;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+/* OPERATORI - VERDE + BOLD + MAI MARI */
+.math-operator,
+math mo {
+    color: #10b981 !important;
+    font-weight: 800 !important;
+    font-size: 1.15em !important;
+    padding: 0 0.3rem;
+}
+
+/* NUMERE - PORTOCALIU + BOLD */
+.math-number,
+math mn {
+    color: #f59e0b !important;
+    font-weight: 700 !important;
+    font-size: 1em !important;
+}
+
+/* NUMERE MARI - PORTOCALIU ÎNCHIS + EXTRA BOLD */
+.math-number-big {
+    color: #ea580c !important;
+    font-weight: 900 !important;
+    font-size: 1.15em !important;
+}
+
+/* EXPONENȚI - ROȘU + BOLD + MAI MICI */
+.math-exponent {
+    color: #ef4444 !important;
+    font-weight: 800 !important;
+    font-size: 0.85em !important;
+}
+
+/* SUBSCRIPTURI - VIOLET + ITALIC */
+.math-subscript {
+    color: #a855f7 !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    font-size: 0.8em !important;
+}
+
+/* CONSTANTE (π, e, η) - GALBEN + BOLD + ITALIC */
+.math-constant {
+    color: #fbbf24 !important;
+    font-weight: 900 !important;
+    font-style: italic !important;
+    font-size: 1.2em !important;
+    text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+}
+
+/* FUNCȚII (log, sin, cos) - VERDE DESCHIS + BOLD */
+.math-function,
+.math-function mi {
+    color: #34d399 !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: 0.95em !important;
+}
+
+/* PARANTEZE - ALB + BOLD + MAI MARI */
+.math-parenthesis {
+    color: #e2e8f0 !important;
+    font-weight: 800 !important;
+    font-size: 1.2em !important;
+}
+
+/* FRACȚII - stil special */
+.math-fraction {
+    border-color: rgba(14, 165, 233, 0.5) !important;
+    margin: 0.2em 0.5em !important;
+}
+
+/* UNITĂȚI DE MĂSURĂ - GRI + ITALIC */
+.math-unit {
+    color: #94a3b8 !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    font-size: 0.85em !important;
+    margin-left: 0.3em;
+}
+
+/* TEXT SPECIAL - ALBASTRU DESCHIS + BOLD */
+.math-text-special {
+    color: #38bdf8 !important;
+    font-weight: 700 !important;
+    font-size: 0.9em !important;
+}
+
+/* MATRICE - stil special */
+.math-matrix {
+    border: 2px solid rgba(14, 165, 233, 0.4);
+    border-radius: 8px;
+    padding: 1rem;
+    background: rgba(14, 165, 233, 0.05);
+}
+
+.math-matrix mtr {
+    line-height: 2.5;
+}
+
+/* Descrieri formule */
+.formula-description {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    line-height: 1.8;
+    text-align: left;
+    padding: 1rem;
+    background: rgba(14, 165, 233, 0.05);
+    border-left: 3px solid var(--primary-blue);
+    border-radius: 4px;
+}
+
+.formula-description strong {
+    color: var(--primary-blue);
+    font-weight: 800;
+}
+
+/* Variabile în descrieri - match cu culorile din formule */
+.var-C, .var-G { color: #3b82f6; font-weight: 700; }
+.var-B, .var-D { color: #3b82f6; font-weight: 700; }
+.var-SN, .var-Pr, .var-Pt { color: #06b6d4; font-weight: 700; }
+.var-lambda { color: #06b6d4; font-weight: 700; }
+.var-eta { color: #fbbf24; font-weight: 700; }
+.var-d { color: #3b82f6; font-weight: 700; }
+
+/* Responsive - mai mic pe mobile */
+@media (max-width: 768px) {
+    math {
+        font-size: 1.5rem;
+    }
+    
+    .math-box {
+        padding: 2rem 1rem;
+    }
+    
+    .formula-container {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* ===============================================
+   SUBSCRIPTIONS SECTION
+   =============================================== */
+.subscriptions-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.subscriptions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.subscription-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.subscription-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+.subscription-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subscription-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
+}
+
+.subscription-price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.subscription-features {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.subscription-features li {
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ===============================================
+   IFRAME YOUTUBE (ETAPA 2 - FLEXBOX)
+   =============================================== */
+.iframe-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.container-iframe {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: flex-start;
+}
+
+.taburi-iframe {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.taburi-iframe a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 45px;
+    background-color: var(--bg-panel);
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.taburi-iframe a:hover {
+    background-color: var(--primary-blue);
+    color: white;
+    box-shadow: 0 0 10px var(--primary-blue);
+    transform: translateX(5px);
+}
+
+iframe {
+    flex: 1;
+    width: 100%;
+    min-width: 250px;
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+.container-iframe iframe {
+    height: 350px;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===============================================
+   IMAGE MAP (BONUS)
+   =============================================== */
+.image-map-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.image-map-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--primary-blue);
+}
+
+/* ===============================================
+   SHOPPING CART
+   =============================================== */
+.cart-icon {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background: var(--gradient-primary);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-normal);
+    z-index: 998;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow);
+}
+
+.cart-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--danger-red);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100vh;
+    background: var(--bg-panel);
+    border-left: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    transition: right var(--transition-normal);
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+.cart-panel.active {
+    right: 0;
+}
+
+.cart-header {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.cart-header h3 {
+    font-size: 1.3rem;
+    color: var(--primary-blue);
+}
+
+.close-cart {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.close-cart:hover {
+    color: var(--danger-red);
+}
+
+.cart-items {
+    padding: 1.5rem;
+}
+
+.cart-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.cart-item-price {
+    color: var(--primary-blue);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.remove-item {
+    background: var(--danger-red);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: var(--transition-fast);
+}
+
+.remove-item:hover {
+    background: #dc2626;
+}
+
+.cart-summary {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    position: sticky;
+    bottom: 0;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--success-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.checkout-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--text-muted);
+}
+
+.empty-cart i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.3;
+}
+
+/* ===============================================
+   CONTACT FORM
+   =============================================== */
+.contact-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    width: 40px;
+}
+
+.info-content h4 {
+    margin-bottom: 0.3rem;
+    color: var(--primary-blue);
+}
+
+.info-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 0.9rem;
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    padding: 1rem 2rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ===============================================
+   SIMILAR SITES
+   =============================================== */
+.similar-sites {
+    margin-bottom: 4rem;
+}
+
+.sites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.site-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: var(--transition-normal);
+    text-decoration: none;
+    display: block;
+}
+
+.site-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.site-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.site-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.site-description {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ===============================================
+   WHATSAPP BUTTON
+   =============================================== */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-normal);
+    z-index: 997;
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+/* ===============================================
+   LINK-TOP: Triunghi cu bază rotundă ÎNĂUNTRUL rombului (ETAPA 2 - A5)
+   =============================================== */
+#link-top {
+    position: fixed;
+    bottom: 110px;
+    right: 30px;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 996;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#link-top.visible {
+    opacity: 0.8;
+    visibility: visible;
+}
+
+#link-top:hover {
+    opacity: 1;
+}
+
+/* ROMBUL - container rotit 45deg */
+.link-square {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--bg-panel);
+    border: 3px solid var(--primary-blue);
+    transform: rotate(45deg);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TRIUNGHIUL - ÎNĂUNTRUL rombului, cu bază rotundă */
+.link-triangle {
+    width: 0;
+    height: 0;
+    border-left: 0.6rem solid transparent;
+    border-right: 0.6rem solid transparent;
+    border-bottom: 1rem solid var(--primary-blue);
+    border-radius: 40%; /* Bază rotundă! */
+    transform: rotate(-45deg); /* Rotație inversă pentru a rămâne vertical */
+    transition: border-bottom-color 0.5s ease;
+    margin-bottom: 0.2rem;
+}
+
+/* HOVER: Schimbă culorile */
+#link-top:hover .link-square {
+    background-color: var(--primary-blue);
+    border-color: white;
+}
+
+#link-top:hover .link-triangle {
+    border-bottom-color: white;
+}
+
+/* ===============================================
+   FOOTER
+   =============================================== */
+footer {
+    background: var(--bg-panel);
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 2rem 1.5rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    font-size: 0.95rem;
+}
+
+.footer-section a:hover {
+    color: var(--primary-blue);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ===============================================
+   NOTIFICATION
+   =============================================== */
+.notification {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-150%);
+    background: var(--success-green);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    z-index: 2000;
+    transition: transform var(--transition-normal);
+    font-weight: 600;
+}
+
+.notification.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ===============================================
+   RESPONSIVE (ETAPA 2)
+   =============================================== */
+
+/* Font-size responsive cu tranziție */
+html {
+    font-size: 18px;
+    transition: font-size 0.4s ease-in-out;
+}
+
+/* ECRAN MEDIU (Tablet) */
+@media (max-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+
+    :root {
+        --page-spacing: 3%;
+        --grid-gap: 1rem;
+        --zone-padding: 1.2rem;
+        --page-padding: 2rem; /* A6.a.1 - Spațiere mai mică pe tablet */
+    }
+
+    /* Grid layout diferit pe mediu */
+    .main-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "zona1 zona1"
+            "zona2 zona2"
+            "zona3 zona4"
+            "zona5 zona6"
+            "zona7 zona7"
+            "zona8 zona8";
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-panel {
+        width: 100%;
+        right: -100%;
+    }
+
+    .satellite-animation {
+        width: 80px;
+        height: 80px;
+        right: 15px;
+    }
+
+    /* Tabel cu scroll orizontal */
+    .table-responsive {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    table {
+        min-width: 600px;
+    }
+}
+
+/* ECRAN MIC (Mobile) */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    :root {
+        --page-spacing: 1%;
+        --grid-gap: 0.5rem;
+        --zone-padding: 1rem;
+        --page-padding: 1rem; /* A6.a.1 - Spațiere minimă pe mobile */
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Grid fără coloane pe mobil (stacked) */
+    .main-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Tabel cu scroll orizontal obligatoriu */
+    .table-responsive {
+        overflow-x: auto;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 700px;
+    }
+
+    /* Iframe flexbox vertical */
+    .container-iframe {
+        flex-direction: column;
+    }
+
+    .taburi-iframe {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Dezactivare animații pe mobil (ETAPA 2) */
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Excepții: păstrăm tranziții pentru interacțiuni esențiale */
+    button,
+    a,
+    input,
+    textarea,
+    select {
+        transition: background-color 0.2s ease, color 0.2s ease !important;
+    }
+}
+
+@media (max-width: 600px) {
+    img, iframe, embed, picture {
+        min-width: 150px;
+    }
+}

@@ -1,0 +1,21 @@
+# Fișiere temporare Mac
+.DS_Store
+
+# Fișiere temporare Windows
+Thumbs.db
+Desktop.ini
+
+# Fișiere backup
+*.bak
+*~
+*.swp
+
+# Fișiere temporare editoare
+.vscode/
+.idea/
+
+# Node modules (dacă folosești npm)
+node_modules/
+
+# Fișiere log
+*.log

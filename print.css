@@ -1,0 +1,315 @@
+/* ===============================================
+   ETAPA 3 - A2: CSS PRINTARE
+   Identificator: css-printare
+   Student: Chiriac Ciprian-Mihai
+   =============================================== */
+
+@media print {
+    
+    /* ============================================
+       CERINȚĂ 1: Banner în susul primei pagini
+       ============================================ */
+    
+    .school-project-banner {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        text-align: center;
+        border: 2px dotted black;
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background: white;
+        z-index: 1000;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 2: Ascunde elemente media
+       ============================================ */
+    
+    /* Imaginile, videoclipuri, iframe-uri, elemente media */
+    img,
+    video,
+    iframe,
+    embed,
+    object,
+    picture,
+    svg,
+    .satellite-animation,
+    figure,
+    figcaption,
+    .image-container,
+    .video-container,
+    .media-element,
+    #link-top /* Link către început pagină */ {
+        display: none !important;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 3: Grid afișat ca block
+       ============================================ */
+    
+    .main-grid,
+    .container,
+    .grid-container,
+    [class*="grid"],
+    [style*="display: grid"],
+    [style*="display:grid"] {
+        display: block !important;
+        grid-template-columns: none !important;
+        grid-template-areas: none !important;
+    }
+    
+    /* Toate zonele grid */
+    .main-grid > *,
+    .container > *,
+    #zona1,
+    #zona2,
+    #zona3,
+    #zona4,
+    #zona5,
+    #zona6,
+    #zona7,
+    #zona8 {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 4: Linkuri ca text normal
+       ============================================ */
+    
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: black !important;
+        text-decoration: none !important;
+        border: none !important;
+        background: none !important;
+    }
+    
+    /* Afișează URL-ul după link (opțional) */
+    a[href]:after {
+        content: "" !important;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 5: Heading H1 pe prima pagină
+       ============================================ */
+    
+    /* Ascunde meniul */
+    nav,
+    .nav-menu,
+    .main-navigation,
+    header nav,
+    .navigation,
+    .menu {
+        display: none !important;
+    }
+    
+    /* H1 - Titlu site */
+    h1,
+    header h1 {
+        /* Prima pagină, centrat */
+        display: block !important;
+        position: relative;
+        margin: 0 auto;
+        padding: 3cm 0;
+        text-align: center;
+        
+        /* Subliniat */
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        
+        /* 2.5× dimensiunea html */
+        font-size: 2.5em !important;
+        
+        /* Page break după */
+        page-break-after: always;
+        
+        /* Centrat vertical pe prima pagină */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 6: Watermark pe fiecare pagină
+       ============================================ */
+    
+    @page {
+        /* Mărimea paginii */
+        size: A4;
+        
+        /* Margini (vor fi suprascrise pentru stânga/dreapta) */
+        margin: 2cm 0.5cm 2cm 2.5cm;
+    }
+    
+    /* Watermark */
+    body::before {
+        content: "Chiriac Ciprian-Mihai";
+        position: fixed;
+        top: 1cm;
+        right: 1cm;
+        width: 100px;
+        height: 2cm;
+        
+        /* Border dublu */
+        border: 3px double black;
+        
+        /* Opacitate */
+        opacity: 0.65;
+        
+        /* Styling */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 0.2cm;
+        background: white;
+        z-index: 9999;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 7: Margini asimetrice (stânga/dreapta)
+       ============================================ */
+    
+    /* Pagini din stânga (impare) */
+    @page :left {
+        margin-left: 2.5cm;
+        margin-right: 0.5cm;
+    }
+    
+    /* Pagini din dreapta (pare) */
+    @page :right {
+        margin-left: 0.5cm;
+        margin-right: 2.5cm;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 5 (continuare): Page break înainte de footer
+       ============================================ */
+    
+    footer {
+        page-break-before: always;
+        margin-top: 2cm;
+    }
+    
+    
+    /* ============================================
+       STILURI GENERALE PRINTARE
+       ============================================ */
+    
+    /* Culori în alb-negru */
+    * {
+        color: black !important;
+        background: white !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    /* Evită ruperea elementelor */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    p, li, blockquote {
+        page-break-inside: avoid;
+    }
+    
+    table, figure {
+        page-break-inside: avoid;
+    }
+    
+    /* Tabele */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    table, th, td {
+        border: 1px solid black !important;
+    }
+    
+    th, td {
+        padding: 0.5cm;
+    }
+    
+    /* Eliminare animații */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    /* Ascunde elemente interactive */
+    button,
+    input[type="submit"],
+    input[type="button"],
+    .btn,
+    .button,
+    .cta-buttons {
+        display: none !important;
+    }
+    
+    /* Font legibil */
+    body {
+        font-family: 'Georgia', 'Times New Roman', serif !important;
+        font-size: 12pt !important;
+        line-height: 1.6 !important;
+    }
+    
+    h1 { font-size: 2.5em !important; }
+    h2 { font-size: 2em !important; }
+    h3 { font-size: 1.5em !important; }
+    h4 { font-size: 1.2em !important; }
+    
+    /* Spacing */
+    p {
+        margin-bottom: 0.5cm;
+    }
+    
+    /* Lista */
+    ul, ol {
+        margin-left: 1cm;
+    }
+    
+    /* Code blocks */
+    code, pre {
+        border: 1px solid black;
+        padding: 0.2cm;
+        font-family: 'Courier New', monospace;
+        font-size: 10pt;
+    }
+}
+
+
+/* ============================================
+   STILURI SPECIALE PENTRU PREVIEW
+   ============================================ */
+
+/* Pentru testare în browser (nu afectează printarea reală) */
+@media screen {
+    .print-preview {
+        max-width: 21cm;
+        margin: 2cm auto;
+        padding: 2cm;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+}

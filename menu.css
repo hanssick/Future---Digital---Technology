@@ -1,0 +1,393 @@
+/* ===============================================
+   ETAPA 3 - A1: MENIU DERULANT
+   Identificator: variante-meniu
+   Compilat din menu.scss
+   =============================================== */
+
+/* Variabile CSS în body pentru temă */
+body {
+    --menu-bg: #0a0e27;
+    --menu-text: #e2e8f0;
+    --menu-hover: #0ea5e9;
+    --menu-active: #06b6d4;
+    --menu-border: #2d3748;
+    --submenu-bg: #141829;
+    --submenu-hover-bg: #1a1f3a;
+    --menu-height: 70px;
+    --menu-transition: 0.3s;
+}
+
+/* Base Navigation Styles */
+.main-navigation {
+    background-color: var(--menu-bg);
+    height: var(--menu-height);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+.main-navigation .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.nav-menu a,
+.nav-logo {
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--menu-text);
+}
+
+.nav-logo:hover {
+    color: var(--menu-hover);
+}
+
+.nav-logo i {
+    margin-right: 0.5rem;
+    color: var(--menu-hover);
+}
+
+/* Hamburger Button (ascuns pe desktop) */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+}
+
+/* BONUS 1: Liniile burger (3 span-uri cu background, poziționare absolută) */
+.burger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--menu-text);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    position: absolute;
+    left: 0;
+    
+    /* BONUS 2 & 3: Animație apariție */
+    animation: burgerAppear 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* BONUS 1: Poziționare fiecare bară */
+.burger-menu span:nth-child(1) {
+    top: 0;
+}
+
+.burger-menu span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-menu span:nth-child(3) {
+    bottom: 0;
+}
+
+/* Animație X când e deschis */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* BONUS 2: Animație hamburger apariție (3+ keyframes) */
+/* Schimbă: culoare + transform + opacity */
+@keyframes burgerAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px) rotate(-180deg) scale(0.5);
+        background-color: transparent;
+    }
+    
+    50% {
+        opacity: 0.5;
+        transform: translateX(10px) rotate(90deg) scale(1.2);
+        background-color: var(--menu-hover);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg) scale(1);
+        background-color: var(--menu-text);
+    }
+}
+
+/* BONUS 3: Delay succesiv pentru bare (generat cu @for în SASS) */
+.burger-menu span:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.burger-menu span:nth-child(2) {
+    animation-delay: 150ms;
+}
+
+.burger-menu span:nth-child(3) {
+    animation-delay: 300ms;
+}
+
+/* Meniu Principal - Desktop */
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0;
+}
+
+.nav-menu > li {
+    position: relative;
+}
+
+.nav-menu > li > a {
+    display: block;
+    padding: 1.2rem 1.5rem;
+    color: var(--menu-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.nav-menu > li > a i {
+    margin-right: 0.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+/* CERINȚĂ: Tranziție hover - schimbare culoare */
+.nav-menu > li > a:hover {
+    color: var(--menu-hover);
+}
+
+.nav-menu > li > a:hover i {
+    color: var(--menu-active);
+}
+
+/* CERINȚĂ SPECIALĂ: Primul buton (Acasă) */
+/* Textul "Acasă" ascuns, apare la hover */
+.nav-menu > li:first-child > a .home-text {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out, max-width 0.3s ease-in-out;
+}
+
+.nav-menu > li:first-child > a:hover .home-text {
+    opacity: 1;
+    max-width: 100px;
+}
+
+/* Submeniu - Desktop */
+.nav-menu > li > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--submenu-bg);
+    min-width: 220px;
+    border: 1px solid var(--menu-border);
+    border-top: 3px solid var(--menu-hover);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    transform-origin: top left;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.nav-menu > li > ul li a {
+    display: block;
+    padding: 0.9rem 1.5rem;
+    color: var(--menu-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--menu-border);
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.nav-menu > li > ul li a:hover {
+    color: var(--menu-hover);
+    background-color: var(--submenu-hover-bg);
+}
+
+.nav-menu > li > ul li:last-child a {
+    border-bottom: none;
+}
+
+.nav-menu > li:hover > ul {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0s;
+}
+
+.nav-menu > li:nth-child(1) { animation-delay: 0.1s; }
+.nav-menu > li:nth-child(2) { animation-delay: 0.2s; }
+.nav-menu > li:nth-child(3) { animation-delay: 0.3s; }
+.nav-menu > li:nth-child(4) { animation-delay: 0.4s; }
+.nav-menu > li:nth-child(5) { animation-delay: 0.5s; }
+.nav-menu > li:nth-child(6) { animation-delay: 0.6s; }
+
+.menu-spacing-0 { margin: 0rem; }
+.menu-spacing-1 { margin: 0.5rem; }
+.menu-spacing-2 { margin: 1rem; }
+.menu-spacing-3 { margin: 1.5rem; }
+.menu-spacing-4 { margin: 2rem; }
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nav-menu a:focus,
+.burger-menu:focus {
+    outline: 2px solid var(--menu-hover);
+    outline-offset: 2px;
+}
+
+.nav-menu a.active {
+    color: var(--menu-active);
+    border-bottom: 3px solid var(--menu-active);
+}
+
+@media (max-width: 1024px) {
+    body {
+        --menu-height: 60px;
+    }
+    
+    .nav-menu > li > a {
+        font-size: 0.9rem;
+        padding: 1rem 1.2rem;
+    }
+    
+    .nav-menu > li > a.home-link .home-text {
+        display: none !important;
+    }
+    
+    .nav-menu > li > a.home-link i {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: var(--menu-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--menu-height));
+        background-color: var(--menu-bg);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 1rem 0;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+    
+    .nav-menu > li {
+        border-bottom: 1px solid var(--menu-border);
+    }
+    
+    .nav-menu > li > a {
+        padding: 1.2rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .nav-menu > li > a.home-link .home-text {
+        display: none;
+    }
+    
+    .nav-menu > li > a.home-link i {
+        margin-right: 0.5rem;
+    }
+    
+    .nav-menu > li > ul {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        border: none;
+        border-left: 3px solid var(--menu-hover);
+        margin-left: 2rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+        mask-image: linear-gradient(to bottom, transparent, black 20%, black);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black);
+        mask-size: 100% 100%;
+        -webkit-mask-size: 100% 100%;
+        mask-position: 0 0;
+        -webkit-mask-position: 0 0;
+    }
+    
+    .nav-menu > li > ul li a {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .nav-menu > li.submenu-open > ul {
+        max-height: 500px;
+    }
+    
+    .nav-menu > li > a::after {
+        content: '\f078';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        float: right;
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-menu > li.submenu-open > a::after {
+        transform: rotate(180deg);
+    }
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Background -->
+    <circle cx="50" cy="50" r="48" fill="#0ea5e9"/>
+    
+    <!-- Satellite dish -->
+    <ellipse cx="50" cy="50" rx="20" ry="25" fill="#fff" opacity="0.9"/>
+    <ellipse cx="50" cy="50" rx="17" ry="22" fill="#06b6d4"/>
+    <ellipse cx="50" cy="50" rx="12" ry="17" fill="#0284c7"/>
+    
+    <!-- Stand -->
+    <rect x="47" y="72" width="6" height="20" fill="#1e293b"/>
+    <rect x="42" y="90" width="16" height="4" fill="#1e293b" rx="1"/>
+    
+    <!-- Receiver -->
+    <rect x="47" y="28" width="6" height="8" fill="#f59e0b" rx="1"/>
+    <circle cx="50" cy="28" r="3" fill="#fbbf24"/>
+    
+    <!-- Signal waves -->
+    <circle cx="50" cy="50" r="35" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+    <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.2"/>
+</svg>
