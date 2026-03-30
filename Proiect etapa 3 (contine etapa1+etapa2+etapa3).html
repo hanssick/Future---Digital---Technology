@@ -1,0 +1,4905 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Chiriac Ciprian-Mihai, Digital Future Technology">
+    <meta name="keywords" content="antena satelit, receptor satelit 4k, kit satelit complet">
+    <meta name="description" content="Future Digital Technology - ETAPA 1 + ETAPA 2 + ETAPA 3 - Site complet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proiect Tehnici Web - Digital Future Technology</title>
+    
+    <!-- Favicon (toate dimensiunile) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230ea5e9'/%3E%3Cellipse cx='50' cy='50' rx='20' ry='25' fill='%23fff' opacity='0.9'/%3E%3Cellipse cx='50' cy='50' rx='17' ry='22' fill='%2306b6d4'/%3E%3Cellipse cx='50' cy='50' rx='12' ry='17' fill='%230284c7'/%3E%3Crect x='47' y='72' width='6' height='20' fill='%231e293b'/%3E%3Crect x='42' y='90' width='16' height='4' fill='%231e293b' rx='1'/%3E%3Crect x='47' y='28' width='6' height='8' fill='%23f59e0b' rx='1'/%3E%3Ccircle cx='50' cy='28' r='3' fill='%23fbbf24'/%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='%23fff' stroke-width='2' opacity='0.3'/%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23fff' stroke-width='1.5' opacity='0.2'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230ea5e9'/%3E%3Cellipse cx='50' cy='50' rx='20' ry='25' fill='%23fff' opacity='0.9'/%3E%3Cellipse cx='50' cy='50' rx='17' ry='22' fill='%2306b6d4'/%3E%3Cellipse cx='50' cy='50' rx='12' ry='17' fill='%230284c7'/%3E%3Crect x='47' y='72' width='6' height='20' fill='%231e293b'/%3E%3Crect x='42' y='90' width='16' height='4' fill='%231e293b' rx='1'/%3E%3Crect x='47' y='28' width='6' height='8' fill='%23f59e0b' rx='1'/%3E%3Ccircle cx='50' cy='28' r='3' fill='%23fbbf24'/%3E%3C/svg%3E">
+    <meta name="theme-color" content="#0ea5e9">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- ═══════════════════════════════════════════════════════════════════
+         ETAPA 3 - NPM CONFIGURATION FILES
+         ═══════════════════════════════════════════════════════════════════
+         
+         Aceste fișiere demonstrează workflow-ul profesional Node.js/NPM
+         pentru compilarea SASS și management dependencies.
+         
+         ─────────────────────────────────────────────────────────────────── -->
+    
+    <!-- PACKAGE.JSON - Metadata și Scripts NPM
+         ───────────────────────────────────────────────────────────────────
+         Definește:
+         - Metadata proiect (nume, versiune, autor, repository)
+         - Scripts NPM pentru compilare SASS (sass, sass:watch, build)
+         - Dependencies: sass@^1.77.0
+         
+         Usage:
+         $ npm install        → instalează dependencies
+         $ npm run sass       → compilează menu.scss → menu.css
+         $ npm run sass:watch → watch mode (auto-compile)
+         $ npm run build      → compressed production build
+         ───────────────────────────────────────────────────────────────────
+         
+{
+  "name": "future-digital-technology",
+  "version": "1.0.0",
+  "description": "Site web profesional pentru electronică, satelit și IT - Proiect Tehnici Web ETAPA 1+2+3",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass menu.scss menu.css",
+    "sass:watch": "sass --watch menu.scss:menu.css",
+    "build": "sass menu.scss menu.css --style compressed",
+    "start": "npm run sass:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanssick/Future---Digital---Technology.git"
+  },
+  "keywords": [
+    "html5", "css3", "sass", "scss", "responsive",
+    "web-design", "javascript", "satelit", "electronica", "IT"
+  ],
+  "author": "Chiriac Ciprian-Mihai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hanssick/Future---Digital---Technology/issues"
+  },
+  "homepage": "https://hanssick.github.io/Future---Digital---Technology/",
+  "devDependencies": {
+    "sass": "^1.77.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
+         
+         ─────────────────────────────────────────────────────────────────── -->
+    
+    <!-- PACKAGE-LOCK.JSON - Dependencies Lockfile
+         ───────────────────────────────────────────────────────────────────
+         Lockează versiunile exacte ale tuturor dependencies pentru
+         reproducibilitate garantată. Generat automat de NPM.
+         
+         Include:
+         - sass@1.77.0 cu toate sub-dependințele
+         - chokidar (file watcher), immutable, source-map-js
+         - Integrity hashes SHA-512 pentru securitate
+         
+         NOTĂ: Fișier lung (300+ linii), vezi package-lock.json separat
+               pentru conținut complet.
+         ───────────────────────────────────────────────────────────────────
+         
+         Primele 50 linii (excerpt):
+         
+{
+  "name": "future-digital-technology",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "future-digital-technology",
+      "version": "1.0.0",
+      "license": "MIT",
+      "devDependencies": {
+        "sass": "^1.77.0"
+      }
+    },
+    "node_modules/sass": {
+      "version": "1.77.0",
+      "resolved": "https://registry.npmjs.org/sass/-/sass-1.77.0.tgz",
+      "integrity": "sha512-eKXJWl1xGiNNJ0TK74SLoO5fqR/PfFKhWfN1V0Vu4uPSvxCXNLHdBLZqw...",
+      "dev": true,
+      "dependencies": {
+        "chokidar": ">=3.0.0 <4.0.0",
+        "immutable": "^4.0.0",
+        "source-map-js": ">=0.6.2 <2.0.0"
+      },
+      "bin": {
+        "sass": "sass.js"
+      },
+      "engines": {
+        "node": ">=14.0.0"
+      }
+    }
+    ...
+  }
+}
+         
+         [Conținut complet: 300+ linii cu toate dependencies]
+         
+         ─────────────────────────────────────────────────────────────────── -->
+    
+    <!-- ═══════════════════════════════════════════════════════════════════
+         END ETAPA 3 - NPM CONFIGURATION
+         ═══════════════════════════════════════════════════════════════════ -->
+    
+    <style>
+        /* ===============================================
+           ETAPA 1 + ETAPA 2 + ETAPA 3 - CSS COMPLET
+           =============================================== */
+        /* CSS ETAPA 2 (style.css) */
+/* ===============================================
+   BONUS 1 ETAPA 2: CSS RESET INTEGRAT
+   Meyer Reset + Redefiniri Custom
+   =============================================== */
+
+/* Meyer Reset Base */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ===============================================
+   REDEFINIRI CUSTOM
+   =============================================== */
+
+/* Box-sizing pentru toate elementele */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* HTML & Body - unități fixe doar aici */
+html {
+    font-size: 18px; /* Base font-size - se modifică în media queries */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+}
+
+/* Headings - dimensiuni relative */
+h1 { font-size: 2.5rem; font-weight: 900; line-height: 1.2; }
+h2 { font-size: 2rem; font-weight: 800; line-height: 1.3; }
+h3 { font-size: 1.75rem; font-weight: 700; line-height: 1.3; }
+h4 { font-size: 1.5rem; font-weight: 700; line-height: 1.4; }
+h5 { font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
+h6 { font-size: 1rem; font-weight: 600; line-height: 1.5; }
+
+/* Paragraphs - dimensiuni relative */
+p {
+    margin-bottom: 1em;
+    font-size: 1rem;
+}
+
+/* Links */
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Text formating - stil custom */
+b, strong {
+    font-weight: 700;
+}
+
+i, em {
+    font-style: italic;
+}
+
+small {
+    font-size: 0.875em;
+}
+
+/* Lists - bullet și indecși custom */
+ul {
+    list-style-position: inside;
+}
+
+ol {
+    list-style-position: inside;
+}
+
+ul li {
+    padding-left: 1em;
+}
+
+ol li {
+    padding-left: 1em;
+}
+
+/* Blockquote */
+blockquote {
+    padding-left: 1.5em;
+    margin: 1.5em 0;
+    font-style: italic;
+}
+
+/* Code */
+code, pre {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+}
+
+/* Table - stil custom */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+/* Forms */
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Iframe */
+iframe {
+    border: 0;
+}
+
+/* Figure */
+figure {
+    margin: 0;
+}
+
+figcaption {
+    font-size: 0.875em;
+    font-style: italic;
+    margin-top: 0.5em;
+}
+
+/* Address */
+address {
+    font-style: normal;
+}
+
+/* Details/Summary */
+summary {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* HR */
+hr {
+    border: 0;
+    height: 1px;
+    margin: 2em 0;
+}
+
+/* Scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus visible pentru accesibilitate */
+:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+    background-color: rgba(14, 165, 233, 0.3);
+}
+
+/* ===============================================
+   VARIABILE RESET - CONSISTENȚĂ
+   =============================================== */
+:root {
+    /* Spacing scale - toate relative */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Font weights */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-black: 900;
+    
+    /* Line heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.8;
+    
+    /* Border radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+}
+
+/* ===============================================
+   CSS VARIABLES & SCHEMA CROMATICĂ (A1 ETAPA 2)
+   =============================================== */
+:root {
+    --primary-blue: #0ea5e9;
+    --primary-dark: #0284c7;
+    --accent-cyan: #06b6d4;
+    --success-green: #10b981;
+    --warning-orange: #f59e0b;
+    --danger-red: #ef4444;
+    
+    --bg-dark: #0a0e27;
+    --bg-panel: #141829;
+    --bg-card: #1a1f3a;
+    --border-color: #2d3748;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    
+    --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+    --gradient-dark: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.3);
+    
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* ETAPA 2 - Grid Layout Variables */
+    --grid-gap: 1.5rem;
+    --zone-padding: 2rem;
+    --page-padding: 3rem; /* A6.a.1 - Spațiere stânga/dreapta pagină */
+    --page-spacing: 5%;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-left: var(--page-padding); /* A6.a.1 - Spațiere stânga */
+    padding-right: var(--page-padding); /* A6.a.1 - Spațiere dreapta */
+}
+
+/* ===============================================
+   HEADER & NAVIGATION
+   =============================================== */
+header {
+    background: rgba(20, 24, 41, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo-text h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.logo-text p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 0;
+    font-weight: 500;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: var(--primary-blue);
+    background: rgba(14, 165, 233, 0.1);
+}
+
+/* Dropdown Menu */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    min-width: 220px;
+    padding: 0.5rem;
+    box-shadow: var(--shadow-lg);
+    flex-direction: column;
+    gap: 0;
+}
+
+nav ul li:hover > ul {
+    display: flex;
+}
+
+nav ul li ul li a {
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+}
+
+/* ===============================================
+   SATELLITE ANIMATION
+   =============================================== */
+.satellite-animation {
+    position: fixed;
+    top: 80px;
+    right: 30px;
+    width: 120px;
+    height: 120px;
+    z-index: 999;
+    pointer-events: none;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.satellite-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.5));
+}
+
+.dish {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.signal-wave {
+    animation: wave 1.5s ease-out infinite;
+    transform-origin: center;
+}
+
+@keyframes wave {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ===============================================
+   HERO SECTION
+   =============================================== */
+.hero {
+    background: var(--gradient-dark);
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.5);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-outline:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+
+/* ===============================================
+   MAIN CONTAINER & GRID LAYOUT (ETAPA 2)
+   =============================================== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* GRID LAYOUT - Desktop (layout-5.png) */
+.main-grid {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "zona1 zona1 zona1"
+        "zona3 zona2 zona4"
+        "zona5 zona2 zona4"
+        "zona5 zona6 zona7"
+        "zona8 zona8 zona8";
+}
+
+/* Grid Areas */
+#zona1 { grid-area: zona1; }
+#zona2 { grid-area: zona2; }
+#zona3 { grid-area: zona3; }
+#zona4 { grid-area: zona4; }
+#zona5 { grid-area: zona5; }
+#zona6 { grid-area: zona6; }
+#zona7 { grid-area: zona7; }
+#zona8 { grid-area: zona8; }
+
+.grid-section {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: var(--zone-padding);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.grid-section:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-blue);
+}
+
+/* Placeholder sections */
+.placeholder {
+    border: 1px dashed var(--primary-blue);
+    background: rgba(14, 165, 233, 0.05);
+}
+
+/* F-Pattern pentru Zona 1 (prezentare cu text) */
+.f-pattern {
+    border-left: 5px solid var(--primary-blue);
+    background: linear-gradient(90deg, var(--bg-panel) 0%, var(--bg-dark) 100%);
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ETAPA 1 Banner */
+.etapa-banner {
+    background: var(--gradient-primary);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-glow);
+}
+
+.etapa-banner h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.etapa-banner p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.2rem;
+}
+
+/* ===============================================
+   PROMOTIONS BANNER
+   =============================================== */
+.promotions-banner {
+    background: var(--gradient-primary);
+    padding: 1rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-glow);
+    animation: pulse-banner 2s ease-in-out infinite;
+}
+
+@keyframes pulse-banner {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.promotions-banner h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.promotions-banner p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+/* ===============================================
+   BLOCKQUOTE
+   =============================================== */
+blockquote {
+    background: var(--bg-card);
+    border-left: 4px solid var(--primary-blue);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-muted);
+    border-radius: 8px;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* ===============================================
+   DESCRIPTION LIST
+   =============================================== */
+dl {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    margin: 2rem 0;
+}
+
+dt {
+    color: var(--primary-blue);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+dt:first-child {
+    margin-top: 0;
+}
+
+dd {
+    color: var(--text-muted);
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* ===============================================
+   CATEGORIES GRID
+   =============================================== */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.category-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition-normal);
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-glow);
+}
+
+.category-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition-normal);
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.05);
+}
+
+.category-content {
+    padding: 1.5rem;
+}
+
+.category-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.category-content p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Chapters overlay on hover */
+.chapters-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.category-card:hover .chapters-overlay {
+    display: flex;
+    opacity: 1;
+}
+
+.chapter-item {
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid var(--primary-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+    width: 90%;
+    text-align: center;
+}
+
+.chapter-item:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* ===============================================
+   PRODUCTS SECTION
+   =============================================== */
+.products-section {
+    margin-bottom: 4rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-md);
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    background: #000;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-normal);
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--success-green);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.product-info {
+    padding: 1.2rem;
+}
+
+.product-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+    min-height: 2.4rem;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+}
+
+.product-specs {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.add-to-cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Product Tooltip */
+.product-tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 14, 39, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    border: 2px solid var(--primary-blue);
+    border-radius: 10px;
+}
+
+.product-card:hover .product-tooltip {
+    display: flex;
+    opacity: 1;
+}
+
+.tooltip-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.tooltip-specs {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.tooltip-specs li {
+    margin-bottom: 0.5rem;
+    list-style: none;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.tooltip-specs li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success-green);
+    font-weight: bold;
+}
+
+.tooltip-price {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ===============================================
+   PDF SECTION
+   =============================================== */
+.pdf-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pdf-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: var(--transition-normal);
+}
+
+.pdf-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.pdf-icon {
+    font-size: 3rem;
+    color: var(--danger-red);
+    margin-bottom: 1rem;
+}
+
+.pdf-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.pdf-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.pdf-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--danger-red);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+}
+
+.pdf-download-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* ===============================================
+   TESTIMONIALS SECTION
+   =============================================== */
+.testimonials-section {
+    margin-bottom: 4rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.testimonial-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.quote-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    color: var(--primary-blue);
+    opacity: 0.2;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+}
+
+.author-info h4 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.author-info p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.rating {
+    color: var(--warning-orange);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* ===============================================
+   EVENTS TABLE (ETAPA 2 - STILIZARE AVANSATĂ)
+   =============================================== */
+.events-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+}
+
+caption {
+    caption-side: bottom;
+    padding: 1rem 0;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    background: transparent;
+}
+
+thead th {
+    background: var(--bg-dark);
+    color: var(--primary-blue);
+    font-weight: 700;
+    border: 3px solid var(--border-color);
+}
+
+/* Culori alternate cu box-shadow (ETAPA 2) */
+tbody tr:nth-child(odd) {
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.03);
+    color: var(--text-main);
+}
+
+tbody tr:nth-child(even) {
+    box-shadow: inset 0 0 15px rgba(14, 165, 233, 0.15);
+    color: var(--primary-blue);
+}
+
+/* Hover cu tranziție (ETAPA 2) */
+tbody tr,
+tbody tr td {
+    transition: background-color 0.75s ease, font-size 0.75s ease;
+}
+
+tbody tr:hover {
+    background-color: rgba(14, 165, 233, 0.2);
+}
+
+tbody tr:hover td {
+    font-size: 1.2em;
+}
+
+tfoot th, tfoot td {
+    background: var(--bg-dark);
+    font-weight: 700;
+    color: var(--primary-blue);
+    border: 1px solid var(--border-color);
+}
+
+/* ===============================================
+   DETAILS/SUMMARY
+   =============================================== */
+details {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--primary-blue);
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: var(--transition-fast);
+}
+
+summary:hover {
+    background: rgba(14, 165, 233, 0.1);
+}
+
+details[open] summary {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+details p {
+    color: var(--text-muted);
+    padding: 0.5rem;
+}
+
+/* ===============================================
+   METER
+   =============================================== */
+meter {
+    width: 100%;
+    height: 25px;
+    border-radius: 4px;
+}
+
+.meter-container {
+    margin: 1rem 0;
+}
+
+.meter-label {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* ===============================================
+   BONUS 2 ETAPA 2: MATHML STILIZAT COMPLEX
+   =============================================== */
+
+/* Container principal formule */
+.math-box {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, 
+        rgba(14, 165, 233, 0.1) 0%, 
+        rgba(6, 182, 212, 0.15) 50%, 
+        rgba(16, 185, 129, 0.1) 100%);
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 2rem 0;
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
+}
+
+.math-box h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+/* Containere individuale pentru fiecare formulă */
+.formula-container {
+    background: rgba(26, 31, 58, 0.6);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    backdrop-filter: blur(10px);
+}
+
+.formula-title {
+    color: var(--accent-cyan);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Stilizare generală MathML */
+math {
+    font-size: 2.2rem;
+    line-height: 2;
+}
+
+.math-formula {
+    margin: 1.5rem 0;
+}
+
+/* STILIZARE VARIABILE - ALBASTRU + ITALIC + BOLD */
+.math-variable,
+math mi:not([class]) {
+    color: #3b82f6 !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    font-size: 1.1em !important;
+}
+
+/* VARIABILE SPECIALE - CYAN + ITALIC + EXTRA BOLD */
+.math-variable-special {
+    color: #06b6d4 !important;
+    font-style: italic !important;
+    font-weight: 900 !important;
+    font-size: 1.2em !important;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+/* OPERATORI - VERDE + BOLD + MAI MARI */
+.math-operator,
+math mo {
+    color: #10b981 !important;
+    font-weight: 800 !important;
+    font-size: 1.15em !important;
+    padding: 0 0.3rem;
+}
+
+/* NUMERE - PORTOCALIU + BOLD */
+.math-number,
+math mn {
+    color: #f59e0b !important;
+    font-weight: 700 !important;
+    font-size: 1em !important;
+}
+
+/* NUMERE MARI - PORTOCALIU ÎNCHIS + EXTRA BOLD */
+.math-number-big {
+    color: #ea580c !important;
+    font-weight: 900 !important;
+    font-size: 1.15em !important;
+}
+
+/* EXPONENȚI - ROȘU + BOLD + MAI MICI */
+.math-exponent {
+    color: #ef4444 !important;
+    font-weight: 800 !important;
+    font-size: 0.85em !important;
+}
+
+/* SUBSCRIPTURI - VIOLET + ITALIC */
+.math-subscript {
+    color: #a855f7 !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    font-size: 0.8em !important;
+}
+
+/* CONSTANTE (π, e, η) - GALBEN + BOLD + ITALIC */
+.math-constant {
+    color: #fbbf24 !important;
+    font-weight: 900 !important;
+    font-style: italic !important;
+    font-size: 1.2em !important;
+    text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+}
+
+/* FUNCȚII (log, sin, cos) - VERDE DESCHIS + BOLD */
+.math-function,
+.math-function mi {
+    color: #34d399 !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: 0.95em !important;
+}
+
+/* PARANTEZE - ALB + BOLD + MAI MARI */
+.math-parenthesis {
+    color: #e2e8f0 !important;
+    font-weight: 800 !important;
+    font-size: 1.2em !important;
+}
+
+/* FRACȚII - stil special */
+.math-fraction {
+    border-color: rgba(14, 165, 233, 0.5) !important;
+    margin: 0.2em 0.5em !important;
+}
+
+/* UNITĂȚI DE MĂSURĂ - GRI + ITALIC */
+.math-unit {
+    color: #94a3b8 !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    font-size: 0.85em !important;
+    margin-left: 0.3em;
+}
+
+/* TEXT SPECIAL - ALBASTRU DESCHIS + BOLD */
+.math-text-special {
+    color: #38bdf8 !important;
+    font-weight: 700 !important;
+    font-size: 0.9em !important;
+}
+
+/* MATRICE - stil special */
+.math-matrix {
+    border: 2px solid rgba(14, 165, 233, 0.4);
+    border-radius: 8px;
+    padding: 1rem;
+    background: rgba(14, 165, 233, 0.05);
+}
+
+.math-matrix mtr {
+    line-height: 2.5;
+}
+
+/* Descrieri formule */
+.formula-description {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    line-height: 1.8;
+    text-align: left;
+    padding: 1rem;
+    background: rgba(14, 165, 233, 0.05);
+    border-left: 3px solid var(--primary-blue);
+    border-radius: 4px;
+}
+
+.formula-description strong {
+    color: var(--primary-blue);
+    font-weight: 800;
+}
+
+/* Variabile în descrieri - match cu culorile din formule */
+.var-C, .var-G { color: #3b82f6; font-weight: 700; }
+.var-B, .var-D { color: #3b82f6; font-weight: 700; }
+.var-SN, .var-Pr, .var-Pt { color: #06b6d4; font-weight: 700; }
+.var-lambda { color: #06b6d4; font-weight: 700; }
+.var-eta { color: #fbbf24; font-weight: 700; }
+.var-d { color: #3b82f6; font-weight: 700; }
+
+/* Responsive - mai mic pe mobile */
+@media (max-width: 768px) {
+    math {
+        font-size: 1.5rem;
+    }
+    
+    .math-box {
+        padding: 2rem 1rem;
+    }
+    
+    .formula-container {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* ===============================================
+   SUBSCRIPTIONS SECTION
+   =============================================== */
+.subscriptions-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.subscriptions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.subscription-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.subscription-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+.subscription-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subscription-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
+}
+
+.subscription-price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.subscription-features {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.subscription-features li {
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ===============================================
+   IFRAME YOUTUBE (ETAPA 2 - FLEXBOX)
+   =============================================== */
+.iframe-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.container-iframe {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: flex-start;
+}
+
+.taburi-iframe {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.taburi-iframe a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 45px;
+    background-color: var(--bg-panel);
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.taburi-iframe a:hover {
+    background-color: var(--primary-blue);
+    color: white;
+    box-shadow: 0 0 10px var(--primary-blue);
+    transform: translateX(5px);
+}
+
+/* Tab activ (video curent) */
+.video-tab.active {
+    background-color: var(--primary-blue);
+    color: white;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+}
+
+iframe {
+    flex: 1;
+    width: 100%;
+    min-width: 250px;
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+.container-iframe iframe {
+    height: 350px;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===============================================
+   IMAGE MAP (BONUS)
+   =============================================== */
+.image-map-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.image-map-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--primary-blue);
+}
+
+/* ===============================================
+   SHOPPING CART
+   =============================================== */
+.cart-icon {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background: var(--gradient-primary);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-normal);
+    z-index: 998;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow);
+}
+
+.cart-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--danger-red);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100vh;
+    background: var(--bg-panel);
+    border-left: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    transition: right var(--transition-normal);
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+.cart-panel.active {
+    right: 0;
+}
+
+.cart-header {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.cart-header h3 {
+    font-size: 1.3rem;
+    color: var(--primary-blue);
+}
+
+.close-cart {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.close-cart:hover {
+    color: var(--danger-red);
+}
+
+.cart-items {
+    padding: 1.5rem;
+}
+
+.cart-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.cart-item-price {
+    color: var(--primary-blue);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.remove-item {
+    background: var(--danger-red);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: var(--transition-fast);
+}
+
+.remove-item:hover {
+    background: #dc2626;
+}
+
+.cart-summary {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    position: sticky;
+    bottom: 0;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--success-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.checkout-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--text-muted);
+}
+
+.empty-cart i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.3;
+}
+
+/* ===============================================
+   CONTACT FORM
+   =============================================== */
+.contact-section {
+    background: var(--bg-panel);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    width: 40px;
+}
+
+.info-content h4 {
+    margin-bottom: 0.3rem;
+    color: var(--primary-blue);
+}
+
+.info-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 0.9rem;
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    padding: 1rem 2rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ===============================================
+   SIMILAR SITES
+   =============================================== */
+.similar-sites {
+    margin-bottom: 4rem;
+}
+
+.sites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.site-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: var(--transition-normal);
+    text-decoration: none;
+    display: block;
+}
+
+.site-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.site-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.site-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.site-description {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ===============================================
+   WHATSAPP BUTTON
+   =============================================== */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-normal);
+    z-index: 997;
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+/* ===============================================
+   LINK-TOP: Triunghi cu bază rotundă ÎNĂUNTRUL rombului (ETAPA 2 - A5)
+   =============================================== */
+#link-top {
+    position: fixed;
+    bottom: 110px;
+    right: 30px;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 996;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#link-top.visible {
+    opacity: 0.8;
+    visibility: visible;
+}
+
+#link-top:hover {
+    opacity: 1;
+}
+
+/* ROMBUL - container rotit 45deg */
+.link-square {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--bg-panel);
+    border: 3px solid var(--primary-blue);
+    transform: rotate(45deg);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TRIUNGHIUL - ÎNĂUNTRUL rombului, cu bază rotundă */
+.link-triangle {
+    width: 0;
+    height: 0;
+    border-left: 0.6rem solid transparent;
+    border-right: 0.6rem solid transparent;
+    border-bottom: 1rem solid var(--primary-blue);
+    border-radius: 40%; /* Bază rotundă! */
+    transform: rotate(-45deg); /* Rotație inversă pentru a rămâne vertical */
+    transition: border-bottom-color 0.5s ease;
+    margin-bottom: 0.2rem;
+}
+
+/* HOVER: Schimbă culorile */
+#link-top:hover .link-square {
+    background-color: var(--primary-blue);
+    border-color: white;
+}
+
+#link-top:hover .link-triangle {
+    border-bottom-color: white;
+}
+
+/* ===============================================
+   FOOTER
+   =============================================== */
+footer {
+    background: var(--bg-panel);
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 2rem 1.5rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    font-size: 0.95rem;
+}
+
+.footer-section a:hover {
+    color: var(--primary-blue);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ===============================================
+   NOTIFICATION
+   =============================================== */
+.notification {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-150%);
+    background: var(--success-green);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    z-index: 2000;
+    transition: transform var(--transition-normal);
+    font-weight: 600;
+}
+
+.notification.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ===============================================
+   RESPONSIVE (ETAPA 2)
+   =============================================== */
+
+/* Font-size responsive cu tranziție */
+html {
+    font-size: 18px;
+    transition: font-size 0.4s ease-in-out;
+}
+
+/* ECRAN MEDIU (Tablet) */
+@media (max-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+
+    :root {
+        --page-spacing: 3%;
+        --grid-gap: 1rem;
+        --zone-padding: 1.2rem;
+        --page-padding: 2rem; /* A6.a.1 - Spațiere mai mică pe tablet */
+    }
+
+    /* Grid layout diferit pe mediu */
+    .main-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "zona1 zona1"
+            "zona2 zona2"
+            "zona3 zona4"
+            "zona5 zona6"
+            "zona7 zona7"
+            "zona8 zona8";
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-panel {
+        width: 100%;
+        right: -100%;
+    }
+
+    .satellite-animation {
+        width: 80px;
+        height: 80px;
+        right: 15px;
+    }
+
+    /* Tabel cu scroll orizontal */
+    .table-responsive {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    table {
+        min-width: 600px;
+    }
+}
+
+/* ECRAN MIC (Mobile) */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    :root {
+        --page-spacing: 1%;
+        --grid-gap: 0.5rem;
+        --zone-padding: 1rem;
+        --page-padding: 1rem; /* A6.a.1 - Spațiere minimă pe mobile */
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Grid fără coloane pe mobil (stacked) */
+    .main-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Tabel cu scroll orizontal obligatoriu */
+    .table-responsive {
+        overflow-x: auto;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 700px;
+    }
+
+    /* Iframe flexbox vertical */
+    .container-iframe {
+        flex-direction: column;
+    }
+
+    .taburi-iframe {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Dezactivare animații pe mobil (ETAPA 2) */
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Excepții: păstrăm tranziții pentru interacțiuni esențiale */
+    button,
+    a,
+    input,
+    textarea,
+    select {
+        transition: background-color 0.2s ease, color 0.2s ease !important;
+    }
+}
+
+@media (max-width: 600px) {
+    img, iframe, embed, picture {
+        min-width: 150px;
+    }
+}
+
+        /* CSS ETAPA 3 - MENIU (menu.css) */
+/* ===============================================
+   ETAPA 3 - A1: MENIU DERULANT
+   Identificator: variante-meniu
+   Compilat din menu.scss
+   =============================================== */
+
+/* Variabile CSS în body pentru temă */
+body {
+    --menu-bg: #0a0e27;
+    --menu-text: #e2e8f0;
+    --menu-hover: #0ea5e9;
+    --menu-active: #06b6d4;
+    --menu-border: #2d3748;
+    --submenu-bg: #141829;
+    --submenu-hover-bg: #1a1f3a;
+    --menu-height: 70px;
+    --menu-transition: 0.3s;
+}
+
+/* Base Navigation Styles */
+.main-navigation {
+    background-color: var(--menu-bg);
+    height: var(--menu-height);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+.main-navigation .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.nav-menu a,
+.nav-logo {
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--menu-text);
+}
+
+.nav-logo:hover {
+    color: var(--menu-hover);
+}
+
+.nav-logo i {
+    margin-right: 0.5rem;
+    color: var(--menu-hover);
+}
+
+/* Hamburger Button (ascuns pe desktop) */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+}
+
+/* BONUS 1: Liniile burger (3 span-uri cu background, poziționare absolută) */
+.burger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--menu-text);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    position: absolute;
+    left: 0;
+    
+    /* BONUS 2 & 3: Animație apariție */
+    animation: burgerAppear 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* BONUS 1: Poziționare fiecare bară */
+.burger-menu span:nth-child(1) {
+    top: 0;
+}
+
+.burger-menu span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-menu span:nth-child(3) {
+    bottom: 0;
+}
+
+/* Animație X când e deschis */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* BONUS 2: Animație hamburger apariție (3+ keyframes) */
+/* Schimbă: culoare + transform + opacity */
+@keyframes burgerAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px) rotate(-180deg) scale(0.5);
+        background-color: transparent;
+    }
+    
+    50% {
+        opacity: 0.5;
+        transform: translateX(10px) rotate(90deg) scale(1.2);
+        background-color: var(--menu-hover);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg) scale(1);
+        background-color: var(--menu-text);
+    }
+}
+
+/* BONUS 3: Delay succesiv pentru bare (generat cu @for în SASS) */
+.burger-menu span:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.burger-menu span:nth-child(2) {
+    animation-delay: 150ms;
+}
+
+.burger-menu span:nth-child(3) {
+    animation-delay: 300ms;
+}
+
+/* Meniu Principal - Desktop */
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0;
+}
+
+.nav-menu > li {
+    position: relative;
+}
+
+.nav-menu > li > a {
+    display: block;
+    padding: 1.2rem 1.5rem;
+    color: var(--menu-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.nav-menu > li > a i {
+    margin-right: 0.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+/* CERINȚĂ: Tranziție hover - schimbare culoare */
+.nav-menu > li > a:hover {
+    color: var(--menu-hover);
+}
+
+.nav-menu > li > a:hover i {
+    color: var(--menu-active);
+}
+
+/* CERINȚĂ SPECIALĂ: Primul buton (Acasă) */
+/* Textul "Acasă" ascuns, apare la hover */
+.nav-menu > li:first-child > a .home-text {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out, max-width 0.3s ease-in-out;
+}
+
+.nav-menu > li:first-child > a:hover .home-text {
+    opacity: 1;
+    max-width: 100px;
+}
+
+/* Submeniu - Desktop */
+.nav-menu > li > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--submenu-bg);
+    min-width: 220px;
+    border: 1px solid var(--menu-border);
+    border-top: 3px solid var(--menu-hover);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    transform-origin: top left;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.nav-menu > li > ul li a {
+    display: block;
+    padding: 0.9rem 1.5rem;
+    color: var(--menu-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--menu-border);
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.nav-menu > li > ul li a:hover {
+    color: var(--menu-hover);
+    background-color: var(--submenu-hover-bg);
+}
+
+.nav-menu > li > ul li:last-child a {
+    border-bottom: none;
+}
+
+.nav-menu > li:hover > ul {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0s;
+}
+
+.nav-menu > li:nth-child(1) { animation-delay: 0.1s; }
+.nav-menu > li:nth-child(2) { animation-delay: 0.2s; }
+.nav-menu > li:nth-child(3) { animation-delay: 0.3s; }
+.nav-menu > li:nth-child(4) { animation-delay: 0.4s; }
+.nav-menu > li:nth-child(5) { animation-delay: 0.5s; }
+.nav-menu > li:nth-child(6) { animation-delay: 0.6s; }
+
+.menu-spacing-0 { margin: 0rem; }
+.menu-spacing-1 { margin: 0.5rem; }
+.menu-spacing-2 { margin: 1rem; }
+.menu-spacing-3 { margin: 1.5rem; }
+.menu-spacing-4 { margin: 2rem; }
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nav-menu a:focus,
+.burger-menu:focus {
+    outline: 2px solid var(--menu-hover);
+    outline-offset: 2px;
+}
+
+.nav-menu a.active {
+    color: var(--menu-active);
+    border-bottom: 3px solid var(--menu-active);
+}
+
+@media (max-width: 1024px) {
+    body {
+        --menu-height: 60px;
+    }
+    
+    .nav-menu > li > a {
+        font-size: 0.9rem;
+        padding: 1rem 1.2rem;
+    }
+    
+    .nav-menu > li > a.home-link .home-text {
+        display: none !important;
+    }
+    
+    .nav-menu > li > a.home-link i {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: var(--menu-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--menu-height));
+        background-color: var(--menu-bg);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 1rem 0;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+    
+    .nav-menu > li {
+        border-bottom: 1px solid var(--menu-border);
+    }
+    
+    .nav-menu > li > a {
+        padding: 1.2rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .nav-menu > li > a.home-link .home-text {
+        display: none;
+    }
+    
+    .nav-menu > li > a.home-link i {
+        margin-right: 0.5rem;
+    }
+    
+    .nav-menu > li > ul {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        border: none;
+        border-left: 3px solid var(--menu-hover);
+        margin-left: 2rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+        mask-image: linear-gradient(to bottom, transparent, black 20%, black);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black);
+        mask-size: 100% 100%;
+        -webkit-mask-size: 100% 100%;
+        mask-position: 0 0;
+        -webkit-mask-position: 0 0;
+    }
+    
+    .nav-menu > li > ul li a {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .nav-menu > li.submenu-open > ul {
+        max-height: 500px;
+    }
+    
+    .nav-menu > li > a::after {
+        content: '\f078';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        float: right;
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-menu > li.submenu-open > a::after {
+        transform: rotate(180deg);
+    }
+}
+
+        /* CSS ETAPA 3 - PRINTARE (print.css) */
+/* ===============================================
+   ETAPA 3 - A2: CSS PRINTARE
+   Identificator: css-printare
+   Student: Chiriac Ciprian-Mihai
+   =============================================== */
+
+@media print {
+    
+    /* ============================================
+       CERINȚĂ 1: Banner în susul primei pagini
+       ============================================ */
+    
+    .school-project-banner {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        text-align: center;
+        border: 2px dotted black;
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background: white;
+        z-index: 1000;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 2: Ascunde elemente media
+       ============================================ */
+    
+    /* Imaginile, videoclipuri, iframe-uri, elemente media */
+    img,
+    video,
+    iframe,
+    embed,
+    object,
+    picture,
+    svg,
+    .satellite-animation,
+    figure,
+    figcaption,
+    .image-container,
+    .video-container,
+    .media-element,
+    #link-top /* Link către început pagină */ {
+        display: none !important;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 3: Grid afișat ca block
+       ============================================ */
+    
+    .main-grid,
+    .container,
+    .grid-container,
+    [class*="grid"],
+    [style*="display: grid"],
+    [style*="display:grid"] {
+        display: block !important;
+        grid-template-columns: none !important;
+        grid-template-areas: none !important;
+    }
+    
+    /* Toate zonele grid */
+    .main-grid > *,
+    .container > *,
+    #zona1,
+    #zona2,
+    #zona3,
+    #zona4,
+    #zona5,
+    #zona6,
+    #zona7,
+    #zona8 {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 4: Linkuri ca text normal
+       ============================================ */
+    
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: black !important;
+        text-decoration: none !important;
+        border: none !important;
+        background: none !important;
+    }
+    
+    /* Afișează URL-ul după link (opțional) */
+    a[href]:after {
+        content: "" !important;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 5: Heading H1 pe prima pagină
+       ============================================ */
+    
+    /* Ascunde meniul */
+    nav,
+    .nav-menu,
+    .main-navigation,
+    header nav,
+    .navigation,
+    .menu {
+        display: none !important;
+    }
+    
+    /* H1 - Titlu site */
+    h1,
+    header h1 {
+        /* Prima pagină, centrat */
+        display: block !important;
+        position: relative;
+        margin: 0 auto;
+        padding: 3cm 0;
+        text-align: center;
+        
+        /* Subliniat */
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        
+        /* 2.5× dimensiunea html */
+        font-size: 2.5em !important;
+        
+        /* Page break după */
+        page-break-after: always;
+        
+        /* Centrat vertical pe prima pagină */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 6: Watermark pe fiecare pagină
+       ============================================ */
+    
+    @page {
+        /* Mărimea paginii */
+        size: A4;
+        
+        /* Margini (vor fi suprascrise pentru stânga/dreapta) */
+        margin: 2cm 0.5cm 2cm 2.5cm;
+    }
+    
+    /* Watermark */
+    body::before {
+        content: "Chiriac Ciprian-Mihai";
+        position: fixed;
+        top: 1cm;
+        right: 1cm;
+        width: 100px;
+        height: 2cm;
+        
+        /* Border dublu */
+        border: 3px double black;
+        
+        /* Opacitate */
+        opacity: 0.65;
+        
+        /* Styling */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 0.2cm;
+        background: white;
+        z-index: 9999;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 7: Margini asimetrice (stânga/dreapta)
+       ============================================ */
+    
+    /* Pagini din stânga (impare) */
+    @page :left {
+        margin-left: 2.5cm;
+        margin-right: 0.5cm;
+    }
+    
+    /* Pagini din dreapta (pare) */
+    @page :right {
+        margin-left: 0.5cm;
+        margin-right: 2.5cm;
+    }
+    
+    
+    /* ============================================
+       CERINȚĂ 5 (continuare): Page break înainte de footer
+       ============================================ */
+    
+    footer {
+        page-break-before: always;
+        margin-top: 2cm;
+    }
+    
+    
+    /* ============================================
+       STILURI GENERALE PRINTARE
+       ============================================ */
+    
+    /* Culori în alb-negru */
+    * {
+        color: black !important;
+        background: white !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    /* Evită ruperea elementelor */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    p, li, blockquote {
+        page-break-inside: avoid;
+    }
+    
+    table, figure {
+        page-break-inside: avoid;
+    }
+    
+    /* Tabele */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    table, th, td {
+        border: 1px solid black !important;
+    }
+    
+    th, td {
+        padding: 0.5cm;
+    }
+    
+    /* Eliminare animații */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    /* Ascunde elemente interactive */
+    button,
+    input[type="submit"],
+    input[type="button"],
+    .btn,
+    .button,
+    .cta-buttons {
+        display: none !important;
+    }
+    
+    /* Font legibil */
+    body {
+        font-family: 'Georgia', 'Times New Roman', serif !important;
+        font-size: 12pt !important;
+        line-height: 1.6 !important;
+    }
+    
+    h1 { font-size: 2.5em !important; }
+    h2 { font-size: 2em !important; }
+    h3 { font-size: 1.5em !important; }
+    h4 { font-size: 1.2em !important; }
+    
+    /* Spacing */
+    p {
+        margin-bottom: 0.5cm;
+    }
+    
+    /* Lista */
+    ul, ol {
+        margin-left: 1cm;
+    }
+    
+    /* Code blocks */
+    code, pre {
+        border: 1px solid black;
+        padding: 0.2cm;
+        font-family: 'Courier New', monospace;
+        font-size: 10pt;
+    }
+}
+
+
+/* ============================================
+   STILURI SPECIALE PENTRU PREVIEW
+   ============================================ */
+
+/* Pentru testare în browser (nu afectează printarea reală) */
+@media screen {
+    .print-preview {
+        max-width: 21cm;
+        margin: 2cm auto;
+        padding: 2cm;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- ====================================================
+         ETAPA 3 - MENIU DERULANT NOU (înlocuiește vechiul)
+         ==================================================== -->
+    <nav class="main-navigation" role="navigation" aria-label="Navigare principală">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <i class="fas fa-satellite-dish"></i>
+                Future Digital Technology
+            </a>
+            
+            <!-- BONUS 1: Hamburger cu 3 span-uri -->
+            <button class="burger-menu" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Meniu Principal ETAPA 3 -->
+            <ul class="nav-menu">
+                <li>
+                    <a href="#home" class="home-link">
+                        <i class="fas fa-home"></i>
+                        <span class="home-text">Acasă</span>
+                    </a>
+                </li>
+                
+                <!-- Submeniu 1: Linkuri către alte pagini -->
+                <li>
+                    <a href="#categories">
+                        <i class="fas fa-images"></i>
+                        Categorii
+                    </a>
+                    <ul>
+                        <li><a href="#satelit-tv">Satelit & TV</a></li>
+                        <li><a href="#it-networking">IT & Networking</a></li>
+                        <li><a href="#electronica">Electronică & SmartHome</a></li>
+                        <li><a href="#service">Service</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Submeniu 2: Linkuri către secțiuni din pagină -->
+                <li>
+                    <a href="#produse">
+                        <i class="fas fa-shopping-cart"></i>
+                        Produse
+                    </a>
+                    <ul>
+                        <li><a href="#categories">Categorii</a></li>
+                        <li><a href="#expertiza">Expertiză</a></li>
+                        <li><a href="#magazin">Abonamente</a></li>
+                        <li><a href="#proiecte">Proiecte</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="#evenimente"><i class="fas fa-calendar"></i> Evenimente</a></li>
+                <li><a href="#documentatie"><i class="fas fa-file-pdf"></i> Documentație</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SATELLITE ANIMATION (ETAPA 1) -->
+    <div class="satellite-animation">
+        <svg class="satellite-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle class="signal-wave" cx="100" cy="100" r="30" fill="none" stroke="#0ea5e9" stroke-width="2" opacity="0.5"/>
+            <circle class="signal-wave" cx="100" cy="100" r="30" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.5" style="animation-delay: 0.5s"/>
+            <circle class="signal-wave" cx="100" cy="100" r="30" fill="none" stroke="#0ea5e9" stroke-width="2" opacity="0.5" style="animation-delay: 1s"/>
+            <ellipse class="dish" cx="100" cy="100" rx="40" ry="50" fill="#0ea5e9" opacity="0.8"/>
+            <ellipse cx="100" cy="100" rx="35" ry="45" fill="#06b6d4"/>
+            <ellipse cx="100" cy="100" rx="25" ry="35" fill="#0284c7"/>
+            <rect x="95" y="145" width="10" height="40" fill="#475569"/>
+            <rect x="85" y="180" width="30" height="8" fill="#475569" rx="2"/>
+            <rect x="95" y="55" width="10" height="15" fill="#f59e0b" rx="2"/>
+            <circle cx="100" cy="55" r="5" fill="#fbbf24"/>
+        </svg>
+    </div>
+
+    <!-- MAIN -->
+    <main id="top">
+
+        <!-- BANNER PROIECT COMPLET - TOATE ETAPELE -->
+        <div class="etapa-banner">
+            <h2>🏆 ETAPA 1 + ETAPA 2 + ETAPA 3 - PROIECT COMPLET TEHNICI WEB</h2>
+            <p><strong>✅ Structură HTML5</strong> | <strong>✅ Stilizare CSS & Layout Responsive</strong> | <strong>✅ Meniu Derulant SASS & CSS Printare</strong></p>
+            <p style="margin-top: 0.5rem;">Toate cerințele + toate bonusurile implementate! 🎯</p>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             ETAPA 3 - NPM CONFIGURATION (Vizibil pe site)
+             ═══════════════════════════════════════════════════════════════ -->
+        <section id="npm-config" style="
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px solid var(--primary-blue, #0ea5e9);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem var(--page-padding, 2rem);
+            box-shadow: 0 8px 32px rgba(14, 165, 233, 0.2);
+        ">
+            <h2 style="
+                color: var(--primary-blue, #0ea5e9);
+                font-family: 'Orbitron', sans-serif;
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            ">
+                📦 ETAPA 3 - NPM Configuration Files
+            </h2>
+            
+            <p style="
+                color: #cbd5e1;
+                text-align: center;
+                margin-bottom: 2rem;
+                font-size: 1.1rem;
+            ">
+                Workflow profesional Node.js/NPM pentru compilarea SASS și management dependencies
+            </p>
+            
+            <!-- package.json -->
+            <div style="margin-bottom: 2rem;">
+                <h3 style="
+                    color: #10b981;
+                    font-family: 'Orbitron', sans-serif;
+                    font-size: 1.3rem;
+                    margin-bottom: 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                ">
+                    <i class="fas fa-file-code" style="color: #10b981;"></i>
+                    package.json
+                </h3>
+                <pre style="
+                    background: #0f172a;
+                    border: 1px solid #334155;
+                    border-radius: 8px;
+                    padding: 1.5rem;
+                    overflow-x: auto;
+                    color: #e2e8f0;
+                    font-family: 'Courier New', monospace;
+                    font-size: 0.9rem;
+                    line-height: 1.6;
+                    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+                "><code>{
+  "name": "future-digital-technology",
+  "version": "1.0.0",
+  "description": "Site web profesional pentru electronică, satelit și IT",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass menu.scss menu.css",
+    "sass:watch": "sass --watch menu.scss:menu.css",
+    "build": "sass menu.scss menu.css --style compressed",
+    "start": "npm run sass:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hanssick/Future---Digital---Technology.git"
+  },
+  "keywords": [
+    "html5", "css3", "sass", "scss", "responsive",
+    "web-design", "javascript", "satelit", "electronica", "IT"
+  ],
+  "author": "Chiriac Ciprian-Mihai",
+  "license": "MIT",
+  "homepage": "https://hanssick.github.io/Future---Digital---Technology/",
+  "devDependencies": {
+    "sass": "^1.77.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}</code></pre>
+            </div>
+            
+            <!-- package-lock.json -->
+            <div>
+                <h3 style="
+                    color: #f59e0b;
+                    font-family: 'Orbitron', sans-serif;
+                    font-size: 1.3rem;
+                    margin-bottom: 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                ">
+                    <i class="fas fa-lock" style="color: #f59e0b;"></i>
+                    package-lock.json
+                </h3>
+                <pre style="
+                    background: #0f172a;
+                    border: 1px solid #334155;
+                    border-radius: 8px;
+                    padding: 1.5rem;
+                    overflow-x: auto;
+                    color: #e2e8f0;
+                    font-family: 'Courier New', monospace;
+                    font-size: 0.9rem;
+                    line-height: 1.6;
+                    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+                "><code>{
+  "name": "future-digital-technology",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "future-digital-technology",
+      "version": "1.0.0",
+      "license": "MIT",
+      "devDependencies": {
+        "sass": "^1.77.0"
+      },
+      "engines": {
+        "node": ">=14.0.0",
+        "npm": ">=6.0.0"
+      }
+    },
+    "node_modules/sass": {
+      "version": "1.77.0",
+      "resolved": "https://registry.npmjs.org/sass/-/sass-1.77.0.tgz",
+      "integrity": "sha512-eKXJWl1xGiNNJ0TK74SLoO5fqR/PfFKhWfN1V0Vu4uPSvxCXNLHdBLZqw...",
+      "dev": true,
+      "dependencies": {
+        "chokidar": ">=3.0.0 <4.0.0",
+        "immutable": "^4.0.0",
+        "source-map-js": ">=0.6.2 <2.0.0"
+      },
+      "bin": {
+        "sass": "sass.js"
+      },
+      "engines": {
+        "node": ">=14.0.0"
+      }
+    }
+  }
+}
+
+<span style="color: #64748b; font-style: italic;">// Fișier complet: 300+ linii cu toate dependencies și integrity hashes
+// Vezi fișierul package-lock.json separat pentru conținut integral</span></code></pre>
+            </div>
+            
+            <!-- Info utilizare -->
+            <div style="
+                background: rgba(14, 165, 233, 0.1);
+                border-left: 4px solid var(--primary-blue, #0ea5e9);
+                border-radius: 4px;
+                padding: 1rem 1.5rem;
+                margin-top: 2rem;
+            ">
+                <h4 style="
+                    color: var(--primary-blue, #0ea5e9);
+                    font-family: 'Orbitron', sans-serif;
+                    margin-bottom: 0.75rem;
+                    font-size: 1.1rem;
+                ">
+                    💡 Utilizare NPM Scripts:
+                </h4>
+                <ul style="
+                    color: #cbd5e1;
+                    line-height: 1.8;
+                    margin-left: 1.5rem;
+                ">
+                    <li><code style="background: #1e293b; padding: 0.2rem 0.5rem; border-radius: 4px; color: #10b981;">npm install</code> - Instalează dependencies (sass)</li>
+                    <li><code style="background: #1e293b; padding: 0.2rem 0.5rem; border-radius: 4px; color: #10b981;">npm run sass</code> - Compilează menu.scss → menu.css</li>
+                    <li><code style="background: #1e293b; padding: 0.2rem 0.5rem; border-radius: 4px; color: #10b981;">npm run sass:watch</code> - Watch mode (auto-compile la modificări)</li>
+                    <li><code style="background: #1e293b; padding: 0.2rem 0.5rem; border-radius: 4px; color: #10b981;">npm run build</code> - Build producție (compressed)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h2>Soluții Complete pentru Recepție TV &amp; Infrastructură IT</h2>
+                <p>Specializați în <b>electronică</b>, <b>sisteme satelit</b> și <b>infrastructură de comunicații</b>. <strong>Service profesional</strong> și <i>consultanță tehnică</i> de încredere. <em>Garantat</em> cele mai bune prețuri!</p>
+                <div class="cta-buttons">
+                    <a href="#categories" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i> Explorează Produsele
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-phone"></i> Contactează-ne
+                    </a>
+                </div>
+            </div>
+            
+            <!-- A6.b - ICONURI FONT AWESOME: Static + Animat -->
+            <div class="features-icons" style="margin-top: 2rem; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; padding: 1.5rem; background: rgba(14, 165, 233, 0.1); border-radius: 10px;">
+                <!-- Icon STATIC (A6.b) -->
+                <div style="text-align: center; color: var(--primary-blue);">
+                    <i class="fas fa-shield-alt" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                    <p style="font-size: 0.9rem; margin: 0;">Garanție Oficială</p>
+                </div>
+                
+                <!-- Icon ANIMAT cu fa-spin (A6.b) -->
+                <div style="text-align: center; color: var(--success-green);">
+                    <i class="fas fa-sync fa-spin" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                    <p style="font-size: 0.9rem; margin: 0;">Stoc Actualizat Live</p>
+                </div>
+                
+                <!-- Icon ANIMAT cu fa-beat (A6.b) -->
+                <div style="text-align: center; color: var(--warning-orange);">
+                    <i class="fas fa-shipping-fast fa-beat" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                    <p style="font-size: 0.9rem; margin: 0;">Livrare Rapidă 24h</p>
+                </div>
+            </div>
+            
+            <!-- PICTURE RESPONSIVE (CERINȚĂ ETAPA 1) - 3 variante -->
+            <picture class="hero-image">
+                <!-- Desktop: 1024px+ -->
+                <source 
+                    media="(min-width: 1024px)" 
+                    srcset="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop&q=80"
+                    type="image/jpeg">
+                
+                <!-- Tablet: 600px - 1023px -->
+                <source 
+                    media="(min-width: 600px)" 
+                    srcset="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop&q=80"
+                    type="image/jpeg">
+                
+                <!-- Mobile: sub 600px -->
+                <source 
+                    media="(max-width: 599px)" 
+                    srcset="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop&q=80"
+                    type="image/jpeg">
+                
+                <!-- Fallback -->
+                <img 
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop&q=80" 
+                    alt="Future Digital Technology - Tehnologie Avansată"
+                    style="width: 100%; max-width: 1200px; height: auto; border-radius: 12px; margin-top: 2rem; box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);">
+            </picture>
+        </section>
+
+        <!-- CONTAINER CU GRID LAYOUT (ETAPA 2) -->
+        <div class="container">
+
+            <!-- GRID LAYOUT RESPONSIVE -->
+            <div class="main-grid">
+
+                <!-- ZONA 1: PREZENTARE F-PATTERN -->
+                <section id="zona1" class="grid-section f-pattern">
+                    <h2 style="color: var(--primary-blue); font-size: 2rem; margin-bottom: 1.5rem;">
+                        🚀 Prezentare Future Digital Technology
+                    </h2>
+                    
+                    <div class="promotions-banner">
+                        <h3>🔥 OFERTĂ SPECIALĂ MARTIE 2026!</h3>
+                        <p>Reduceri de până la 30% la <b>sisteme satelit complete</b> + <b>instalare GRATUITĂ</b>! <ins>Oferta valabilă până la finalul lunii</ins> <s>prețurile anterioare</s></p>
+                    </div>
+
+                    <blockquote>
+                        <p><q>Tehnologia este cea mai bună investiție pe care o poți face pentru viitorul tău.</q> Echipamentele noastre sunt certificate și garantate, cu suport tehnic profesional inclus.</p>
+                        <cite>— Departamentul Tehnic, Future Digital Technology</cite>
+                    </blockquote>
+
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main); margin-top: 1.5rem;">
+                        Suntem <strong>lideri</strong> în domeniul <b>electronicii</b>, <b>sistemelor satelit</b> și <b>infrastructurii IT</b> din România. 
+                        Cu peste <b>15 ani de experiență</b>, oferim <em>soluții complete</em> pentru: recepție TV satelit, 
+                        rețele de calculatoare, sisteme smart home și service profesional. 
+                        <i>Showroom-ul nostru din București</i> vă așteaptă cu cele mai noi tehnologii!
+                    </p>
+                </section>
+
+                <!-- ZONA 2: TABEL EVENIMENTE -->
+            <div class="promotions-banner">
+                <h3>🔥 OFERTĂ SPECIALĂ MARTIE 2026!</h3>
+                <p>Reduceri de până la 30% la <b>sisteme satelit complete</b> + <b>instalare GRATUITĂ</b>! <ins>Oferta valabilă până la finalul lunii</ins> <s>prețurile anterioare</s></p>
+            </div>
+
+            <!-- BLOCKQUOTE -->
+            <blockquote>
+                <p><q>Tehnologia este cea mai bună investiție pe care o poți face pentru viitorul tău.</q> Echipamentele noastre sunt certificate și garantate, cu suport tehnic profesional inclus.</p>
+                <cite>— Departamentul Tehnic, Future Digital Technology</cite>
+            </blockquote>
+
+            <!-- DESCRIPTION LIST -->
+            <section id="expertiza">
+                <h2 class="section-title">Expertiză Tehnică Avansată</h2>
+                
+                <dl>
+                    <dt><dfn><abbr title="Transmission Control Protocol / Internet Protocol">TCP/IP</abbr></dfn></dt>
+                    <dd>Protocol fundamental pentru comunicarea în rețele. Folosim cele mai recente standarde pentru a asigura <b>viteze mari</b> și <b>stabilitate</b>.</dd>
+
+                    <dt>Sisteme <i>Enigma2</i></dt>
+                    <dd>Platformă open-source pentru receptoare satelit. Oferim <b>configurare profesională</b> și <b>personalizare completă</b>.</dd>
+
+                    <dt>Infrastructură <abbr title="Wireless Fidelity">WiFi</abbr> 6E</dt>
+                    <dd>Ultima generație de tehnologie wireless. Acoperire extinsă, viteze de până la <b>10 Gbps</b>, latență minimă.</dd>
+
+                    <dt><i>Smart Home</i> Integration</dt>
+                    <dd>Automatizare completă folosind protocoale <i>Zigbee</i>, <i>Z-Wave</i> și <abbr title="Internet of Things">IoT</abbr>. Control total din aplicație mobilă.</dd>
+                </dl>
+            </section>
+
+            <!-- EVENIMENTE CU LISTĂ -->
+            <section id="evenimente-lista">
+                <h3>📅 Evenimente Speciale Aprilie-Mai 2026</h3>
+                <ol>
+                    <li>
+                        <time datetime="2026-04-15T10:00">15 Aprilie 2026, ora 10:00</time> - 
+                        <b>Workshop Smart Home pentru Începători</b> - 
+                        Învață să-ți transformi casa într-o locuință inteligentă! Participare gratuită, înscrieri limitate la 30 de persoane.
+                    </li>
+                    <li>
+                        <time datetime="2026-05-10T14:00">10 Mai 2026, ora 14:00</time> - 
+                        <b>Lansare Receptoare 8K UHD</b> - 
+                        Prezentăm noile modele de receptoare satelit cu rezoluție 8K. Demonstrații live și reduceri exclusive pentru participanți.
+                    </li>
+                    <li>
+                        <time datetime="2026-05-22T18:00">22 Mai 2026, ora 18:00</time> - 
+                        <b>Webinar: WiFi 7 și Rețelistică Avansată</b> - 
+                        Online, acces gratuit cu înregistrare. Aflați despre tehnologiile de rețea de ultimă generație.
+                    </li>
+                </ol>
+                
+                <p><b>Stoc limitat</b> pentru toate evenimentele! <strong>Rezervă-ți locul ACUM!</strong></p>
+                
+                <div class="meter-container">
+                    <span class="meter-label">Locuri disponibile Workshop Smart Home:</span>
+                    <meter value="8" min="0" max="30" low="10" high="25" optimum="30"></meter>
+                    <p style="color: var(--danger-red); margin-top: 0.5rem;"><small>Doar 8 locuri rămase din 30!</small></p>
+                </div>
+
+                <div class="meter-container">
+                    <span class="meter-label">Participanți confirmați Webinar WiFi 7:</span>
+                    <meter value="87" min="0" max="100" low="30" high="70" optimum="50"></meter>
+                    <p style="color: var(--success-green); margin-top: 0.5rem;"><small>87 de participanți înregistrați - eveniment foarte popular!</small></p>
+                </div>
+            </section>
+
+            <!-- PICTURE CU 3 VARIANTE -->
+            <section id="vizual-principal">
+                <h3>Infrastructura Noastră Modernă</h3>
+                <figure>
+                    <a href="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600" target="_blank">
+                        <picture title="Infrastructură Digital Future Technology">
+                            <source media="(min-width: 1024px)" srcset="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85">
+                            <source media="(min-width: 600px)" srcset="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=75" alt="Echipamente IT și servere" title="Click pentru imagine mărită">
+                        </picture>
+                    </a>
+                    <figcaption>Sediul nostru central: Hub-ul de <i>infrastructură critică</i> din <b>București</b>. <br>Dotări complete pentru service și instalări profesionale.</figcaption>
+                </figure>
+            </section>
+
+            <!-- LINKURI CERUTE -->
+            <section id="linkuri-resurse">
+                <h3>🔗 Resurse și Linkuri Utile</h3>
+                
+                <p>
+                    Consultați legislația actualizată despre echipamente electronice și telecomunicații: 
+                    <a href="https://www.ancom.ro/legislatie-nationala_2394#radio-communications" target="_blank">
+                        https://www.ancom.ro/<wbr>legislatie-nationala<wbr>_2394#radio-<wbr>communications
+                    </a>
+                </p>
+
+                <p>
+                    <a href="resurse/imagini/catalog-produse.jpg" download="Catalog_FDT_2026.jpg">
+                        <i class="fas fa-download"></i> Descarcă Catalogul Complet (PDF)
+                    </a> - salvează automat ca "Catalog_FDT_2026.jpg"
+                </p>
+            </section>
+
+            <!-- IFRAME YOUTUBE + 3 LINKURI (CERINȚĂ ETAPA 2 - Stilizare taburi cu flexbox) -->
+            <section class="iframe-section" id="tutoriale-video">
+                <h2>📺 Tutoriale Video Tehnice</h2>
+                
+                <!-- FLEXBOX: iframe stânga, butoane dreapta (ca în video) -->
+                <div class="container-iframe" style="display: flex; flex-direction: row; gap: 2rem; align-items: flex-start;">
+                    
+                    <!-- IFRAME YouTube (dreptunghiul alb cu border) -->
+                    <iframe 
+                        name="video-frame"
+                        src="https://www.youtube.com/embed/5PbPbt_L8-M?autoplay=0&controls=1&modestbranding=1" 
+                        style="flex: 1; min-height: 400px; border: 3px solid #e5e7eb; border-radius: 8px; background: white;"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+
+                    <!-- 3 BUTOANE VERTICALE pe dreapta (stilizare ca în video) -->
+                    <div class="taburi-iframe" style="display: flex; flex-direction: column; gap: 0.5rem; min-width: 250px;">
+                        <a href="https://www.youtube.com/embed/dQw4w9WgXcQ" target="video-frame" 
+                           style="display: block; padding: 1rem 1.5rem; background: rgba(219, 39, 119, 0.1); border: 2px solid #db2777; border-radius: 8px; color: #1f2937; text-decoration: none; font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                            📡 Receptoare Satelit 4K
+                        </a>
+                        <a href="https://www.youtube.com/embed/3JZ_D3ELwOQ" target="video-frame"
+                           style="display: block; padding: 1rem 1.5rem; background: rgba(219, 39, 119, 0.1); border: 2px solid #db2777; border-radius: 8px; color: #1f2937; text-decoration: none; font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                            💻 Calculatoare & IT
+                        </a>
+                        <a href="https://www.youtube.com/embed/5PbPbt_L8-M" target="video-frame"
+                           style="display: block; padding: 1rem 1.5rem; background: rgba(219, 39, 119, 0.1); border: 2px solid #db2777; border-radius: 8px; color: #1f2937; text-decoration: none; font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                            🏠 Smart Home Tech
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- VIDEO LOCAL (CERINȚĂ ETAPA 2 - Stilizare taburi/media) -->
+            <section class="video-local-section" id="video-prezentare">
+                <h2>🎬 Video Prezentare Produse</h2>
+                
+                <div class="container-video-local">
+                    <video controls width="100%" style="max-width: 800px; border-radius: 10px; border: 2px solid var(--primary-blue);">
+                        <source src="resurse/video/Cerinte_custom__3.mp4" type="video/mp4">
+                        Browser-ul tău nu suportă tag-ul video HTML5.
+                    </video>
+                    <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                        📹 Video demonstrativ cu produsele noastre principale
+                    </p>
+                </div>
+            </section>
+
+            <!-- DETAILS/SUMMARY (FAQ) -->
+            <section id="intrebari-frecvente">
+                <h3>❓ Întrebări Frecvente (FAQ)</h3>
+                
+                <details>
+                    <summary>Oferiți garanție pentru produsele vândute?</summary>
+                    <p>Da, toate produsele noastre beneficiază de <b>garanție minimă 12 luni</b>, iar pentru anumite categorii oferim <b>garanție extinsă până la 36 luni</b>. Service-ul este asigurat în showroom-ul nostru din București.</p>
+                </details>
+
+                <details>
+                    <summary>Includeți servicii de instalare la domiciliu?</summary>
+                    <p>Absolut! Oferim <b>instalare profesională</b> pentru toate sistemele satelit, rețele IT și smart home. Costurile variază în funcție de complexitate și distanță. Pentru București și Ilfov, transportul este <strong>GRATUIT</strong>!</p>
+                </details>
+
+                <details>
+                    <summary>Acceptați plata în rate?</summary>
+                    <p>Da, colaborăm cu toate băncile majore din România. Puteți achiziționa produse în rate fără dobândă pentru perioade de <b>3, 6 sau 12 luni</b>. Necesită doar carte de identitate și card bancar.</p>
+                </details>
+
+                <details>
+                    <summary>Realizați proiecte pentru companii?</summary>
+                    <p>Sigur! Avem <b>departament dedicat B2B</b> pentru proiecte corporate: infrastructură IT, rețele WiFi enterprise, sisteme de supraveghere, soluții satelit pentru hoteluri/restaurante. Solicitați ofertă personalizată!</p>
+                </details>
+
+                <details>
+                    <summary>Cum pot programa o consultanță tehnică gratuită?</summary>
+                    <p>Sunați la <a href="tel:+40722123456">+40 722 123 456</a> sau completați formularul de contact. Un specialist vă va contacta în maxim <b>2 ore lucrătoare</b> pentru a stabili detaliile.</p>
+                </details>
+            </section>
+
+            <!-- BONUS 2 ETAPA 2: MATHML STILIZAT COMPLEX -->
+            <section id="calcule-tehnice">
+                <div class="math-box">
+                    <h3>📐 Formule Tehnice pentru Sisteme Satelit</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                        Calcule avansate pentru optimizarea transmisiei satelit
+                    </p>
+                    
+                    <!-- FORMULA 1: Shannon-Hartley Theorem -->
+                    <div class="formula-container">
+                        <h4 class="formula-title">Formula Shannon-Hartley (Capacitatea Canalului)</h4>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="math-formula">
+                            <mrow>
+                                <mi class="math-variable">C</mi>
+                                <mo class="math-operator">=</mo>
+                                <mi class="math-variable">B</mi>
+                                <mo class="math-operator">×</mo>
+                                <msub class="math-function">
+                                    <mi>log</mi>
+                                    <mn class="math-number">2</mn>
+                                </msub>
+                                <mfenced class="math-parenthesis">
+                                    <mrow>
+                                        <mn class="math-number">1</mn>
+                                        <mo class="math-operator">+</mo>
+                                        <mfrac class="math-fraction">
+                                            <mi class="math-variable-special">S</mi>
+                                            <mi class="math-variable-special">N</mi>
+                                        </mfrac>
+                                    </mrow>
+                                </mfenced>
+                            </mrow>
+                        </math>
+                        <p class="formula-description">
+                            unde: <span class="var-C">C</span> = capacitate (bits/s), 
+                            <span class="var-B">B</span> = lățime bandă (Hz), 
+                            <span class="var-SN">S/N</span> = raport semnal/zgomot
+                        </p>
+                    </div>
+
+                    <!-- FORMULA 2: Antenna Gain -->
+                    <div class="formula-container">
+                        <h4 class="formula-title">Câștigul Antenei Parabolice</h4>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="math-formula">
+                            <mrow>
+                                <mi class="math-variable">G</mi>
+                                <mo class="math-operator">=</mo>
+                                <mi class="math-constant">η</mi>
+                                <mo class="math-operator">·</mo>
+                                <msup>
+                                    <mfenced class="math-parenthesis">
+                                        <mfrac class="math-fraction">
+                                            <mrow>
+                                                <mi class="math-constant">π</mi>
+                                                <mo class="math-operator">·</mo>
+                                                <mi class="math-variable">D</mi>
+                                            </mrow>
+                                            <mi class="math-variable-special">λ</mi>
+                                        </mfrac>
+                                    </mfenced>
+                                    <mn class="math-exponent">2</mn>
+                                </msup>
+                            </mrow>
+                        </math>
+                        <p class="formula-description">
+                            unde: <span class="var-G">G</span> = câștig antenă, 
+                            <span class="var-eta">η</span> = eficiență, 
+                            <span class="var-D">D</span> = diametru, 
+                            <span class="var-lambda">λ</span> = lungime undă
+                        </p>
+                    </div>
+
+                    <!-- FORMULA 3: Link Budget (cea mai complexă) -->
+                    <div class="formula-container">
+                        <h4 class="formula-title">Link Budget pentru Transmisie Satelit</h4>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="math-formula">
+                            <mrow>
+                                <msub>
+                                    <mi class="math-variable-special">P</mi>
+                                    <mi class="math-subscript">r</mi>
+                                </msub>
+                                <mo class="math-operator">=</mo>
+                                <msub>
+                                    <mi class="math-variable-special">P</mi>
+                                    <mi class="math-subscript">t</mi>
+                                </msub>
+                                <mo class="math-operator">+</mo>
+                                <msub>
+                                    <mi class="math-variable">G</mi>
+                                    <mi class="math-subscript">t</mi>
+                                </msub>
+                                <mo class="math-operator">+</mo>
+                                <msub>
+                                    <mi class="math-variable">G</mi>
+                                    <mi class="math-subscript">r</mi>
+                                </msub>
+                                <mo class="math-operator">−</mo>
+                                <mn class="math-number">20</mn>
+                                <mo class="math-operator">·</mo>
+                                <msub class="math-function">
+                                    <mi>log</mi>
+                                    <mn class="math-number">10</mn>
+                                </msub>
+                                <mfenced class="math-parenthesis">
+                                    <mfrac class="math-fraction">
+                                        <mrow>
+                                            <mn class="math-number">4</mn>
+                                            <mi class="math-constant">π</mi>
+                                            <mi class="math-variable">d</mi>
+                                        </mrow>
+                                        <mi class="math-variable-special">λ</mi>
+                                    </mfrac>
+                                </mfenced>
+                            </mrow>
+                        </math>
+                        <p class="formula-description">
+                            <strong>Link Budget</strong> - calculul puterii primite la recepție: 
+                            <span class="var-Pr">P<sub>r</sub></span> = putere recepție (dBm), 
+                            <span class="var-Pt">P<sub>t</sub></span> = putere transmisie (dBm), 
+                            <span class="var-G">G<sub>t,r</sub></span> = câștiguri antene, 
+                            <span class="var-d">d</span> = distanță satelit
+                        </p>
+                    </div>
+
+                    <!-- MATRICE DE EXPLICAȚII -->
+                    <div class="formula-container">
+                        <h4 class="formula-title">Matrice Parametri Sistem</h4>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="math-formula">
+                            <mtable columnalign="right center left" rowspacing="0.8em" class="math-matrix">
+                                <mtr>
+                                    <mtd><mi class="math-variable">Frecvență</mi></mtd>
+                                    <mtd><mo class="math-operator">=</mo></mtd>
+                                    <mtd>
+                                        <mn class="math-number-big">11.7</mn>
+                                        <mo class="math-operator">−</mo>
+                                        <mn class="math-number-big">12.75</mn>
+                                        <mtext class="math-unit">GHz</mtext>
+                                    </mtd>
+                                </mtr>
+                                <mtr>
+                                    <mtd><mi class="math-variable">Polarizare</mi></mtd>
+                                    <mtd><mo class="math-operator">=</mo></mtd>
+                                    <mtd><mtext class="math-text-special">Circulară / Liniară</mtext></mtd>
+                                </mtr>
+                                <mtr>
+                                    <mtd><mi class="math-variable-special">EIRP</mi></mtd>
+                                    <mtd><mo class="math-operator">=</mo></mtd>
+                                    <mtd>
+                                        <mn class="math-number-big">52</mn>
+                                        <mo class="math-operator">−</mo>
+                                        <mn class="math-number-big">56</mn>
+                                        <mtext class="math-unit">dBW</mtext>
+                                    </mtd>
+                                </mtr>
+                                <mtr>
+                                    <mtd><mi class="math-constant">π</mi></mtd>
+                                    <mtd><mo class="math-operator">≈</mo></mtd>
+                                    <mtd><mn class="math-number-big">3.14159265</mn></mtd>
+                                </mtr>
+                            </mtable>
+                        </math>
+                    </div>
+
+                    <p style="color: var(--accent-cyan); margin-top: 2rem; font-size: 0.95rem; text-align: center;">
+                        <small><em>Toate formulele sunt utilizate în optimizarea sistemelor noastre de recepție satelit profesionale.</em></small>
+                    </p>
+                </div>
+            </section>
+
+            <!-- PDF EMBED (BONUS) -->
+            <section class="pdf-section" id="documentatie">
+                <h2 class="section-title">📄 Cataloage & Documentație PDF</h2>
+                
+                <p style="text-align: center; margin-bottom: 2rem; color: var(--text-muted);">
+                    Vizualizați catalogul nostru complet direct în browser:
+                </p>
+
+                <embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" width="100%" height="600px" style="border: 2px solid var(--primary-blue); border-radius: 10px;">
+
+                <div class="pdf-grid" style="margin-top: 2rem;">
+                    
+                    <div class="pdf-card">
+                        <i class="fas fa-file-pdf pdf-icon"></i>
+                        <h3 class="pdf-title">Catalog Receptoare Satelit 2026</h3>
+                        <p class="pdf-description">Ghid complet cu toate modelele de <b>receptoare HD</b>, <b>4K</b> și <b>8K</b> disponibile. Include specificații tehnice detaliate.</p>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="pdf-download-btn">
+                            <i class="fas fa-download"></i> Descarcă PDF
+                        </a>
+                    </div>
+
+                    <div class="pdf-card">
+                        <i class="fas fa-file-pdf pdf-icon"></i>
+                        <h3 class="pdf-title">Oferte Speciale Antene Satelit</h3>
+                        <p class="pdf-description">Promoții exclusive pentru <b>kituri complete</b> de antene satelit. Reduceri până la <b>40%</b> pentru comenzi mari.</p>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download="Oferte_Antene_2026.pdf" class="pdf-download-btn">
+                            <i class="fas fa-download"></i> Descarcă PDF
+                        </a>
+                    </div>
+
+                    <div class="pdf-card">
+                        <i class="fas fa-file-pdf pdf-icon"></i>
+                        <h3 class="pdf-title">Ghid Smart Home 2026</h3>
+                        <p class="pdf-description">Transformă-ți casa într-o locuință inteligentă. <b>Sisteme complete</b> de automatizare și control <abbr title="Internet of Things">IoT</abbr>.</p>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="pdf-download-btn">
+                            <i class="fas fa-download"></i> Descarcă PDF
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- IMAGE MAP (BONUS) -->
+            <section class="image-map-section" id="harta-showroom">
+                <h2 class="section-title">🗺️ Hartă Interactivă Showroom</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Click pe zonele de interes pentru a afla mai multe:</p>
+                
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" alt="Plan Showroom" usemap="#showroom-map">
+                
+                <map name="showroom-map">
+                    <area shape="rect" coords="0,0,250,200" href="#receptoare" alt="Zona Receptoare Satelit" title="Receptoare Satelit HD & 4K">
+                    <area shape="rect" coords="250,0,500,200" href="#calculatoare" alt="Zona IT" title="Calculatoare & Laptopuri">
+                    <area shape="rect" coords="500,0,800,200" href="#smart-home" alt="Zona Smart Home" title="Dispozitive Smart Home">
+                    <area shape="circle" coords="400,350,80" href="#contact" alt="Recepție & Informații" title="Birou Informații">
+                </map>
+
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                    <small>Zonele clicabile: Receptoare (stânga), IT (centru), Smart Home (dreapta), Recepție (jos-centru)</small>
+                </p>
+            </section>
+
+            <!-- CATEGORIES SECTION -->
+            <section id="categories">
+                <h2 class="section-title">Explorează Universurile Noastre</h2>
+                <div class="categories-grid" id="magazin">
+                    
+                    <a href="javascript:openCategoryPage('satelit')" class="category-card" data-category="satelit">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600" alt="Satelit & TV" class="category-image" loading="lazy">
+                        <div class="category-content">
+                            <h3><i class="fas fa-satellite-dish"></i> Universul SATELIT &amp; TV</h3>
+                            <p><b>Receptoare</b>, <b>antene</b>, <b>abonamente</b> și sisteme complete de recepție satelit. <i>Instalare profesională</i> inclusă!</p>
+                        </div>
+                        <div class="chapters-overlay">
+                            <span class="chapter-item">📡 Receptoare Satelit</span>
+                            <span class="chapter-item">📶 Sisteme de Antene</span>
+                            <span class="chapter-item">📺 Televiziune cu Plată</span>
+                            <span class="chapter-item">🔌 Echipamente Distribuție</span>
+                            <span class="chapter-item">🚐 Camping &amp; Portabil</span>
+                        </div>
+                    </a>
+
+                    <a href="javascript:openCategoryPage('it')" class="category-card" data-category="it">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="IT & Networking" class="category-image" loading="lazy">
+                        <div class="category-content">
+                            <h3><i class="fas fa-network-wired"></i> Universul IT &amp; NETWORKING</h3>
+                            <p><b>Calculatoare</b>, <b>componente</b>, <b>rețelistică</b> și infrastructură IT completă pentru afaceri și acasă.</p>
+                        </div>
+                        <div class="chapters-overlay">
+                            <span class="chapter-item">💻 Calculatoare &amp; Laptopuri</span>
+                            <span class="chapter-item">🔧 Componente PC</span>
+                            <span class="chapter-item">🌐 Rețelistică</span>
+                            <span class="chapter-item">⌨️ Periferice</span>
+                            <span class="chapter-item">💾 Stocare Externă</span>
+                        </div>
+                    </a>
+
+                    <a href="javascript:openCategoryPage('electronica')" class="category-card" data-category="electronica">
+                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=600" alt="Electronică" class="category-image" loading="lazy">
+                        <div class="category-content">
+                            <h3><i class="fas fa-microchip"></i> ELECTRONICĂ &amp; SMARTHOME</h3>
+                            <p><b>Audio-video</b>, <b>supraveghere</b>, casă inteligentă și <b>componente electronice</b> premium.</p>
+                        </div>
+                        <div class="chapters-overlay">
+                            <span class="chapter-item">🔊 Audio-Video</span>
+                            <span class="chapter-item">📹 Supraveghere Video</span>
+                            <span class="chapter-item">🏠 Casă Inteligentă</span>
+                            <span class="chapter-item">⚡ Componente Electronice</span>
+                        </div>
+                    </a>
+
+                    <a href="javascript:openCategoryPage('service')" class="category-card" data-category="service">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" alt="Service" class="category-image" loading="lazy">
+                        <div class="category-content">
+                            <h3><i class="fas fa-tools"></i> Service &amp; Suport Tehnic</h3>
+                            <p><b>Instalări profesionale</b>, configurări, <b>mentenanță</b> și <i>consultanță specializată</i>.</p>
+                        </div>
+                        <div class="chapters-overlay">
+                            <span class="chapter-item">🔨 Instalări Complete</span>
+                            <span class="chapter-item">⚙️ Configurări Sisteme</span>
+                            <span class="chapter-item">🛠️ Mentenanță &amp; Reparații</span>
+                            <span class="chapter-item">💡 Consultanță Tehnică</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- PRODUCTS SECTION - RECEPTOARE SATELIT -->
+            <section class="products-section" id="receptoare">
+                <h2 class="section-title">📡 Receptoare Satelit HD &amp; 4K</h2>
+                <div class="products-grid" id="receptoare-grid"></div>
+            </section>
+
+            <!-- TESTIMONIALS SECTION -->
+            <section class="testimonials-section" id="testimonials">
+                <h2 class="section-title">⭐ Ce Spun Clienții Noștri</h2>
+                <div class="testimonials-grid">
+                    
+                    <article class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="testimonial-text">
+                            Am cumpărat un sistem complet de <b>antene satelit</b> și sunt extrem de mulțumit! Echipa a fost profesionistă, instalarea a durat doar 2 ore și acum primesc peste 200 de canale cristalin. Recomand cu încredere!
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AP</div>
+                            <div class="author-info">
+                                <h4>Alexandru Popescu</h4>
+                                <p>Client Business • București</p>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="testimonial-text">
+                            <b>Service excepțional!</b> Mi-au configurat toată <b>rețeaua IT</b> din birou - routere, switch-uri, cablare structurată. Totul funcționează perfect, viteza este incredibilă. Cei mai buni specialiști cu care am lucrat!
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MI</div>
+                            <div class="author-info">
+                                <h4>Maria Ionescu</h4>
+                                <p>Manager IT • Ploiești</p>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="testimonial-text">
+                            Am transformat casa într-un <b>Smart Home</b> cu ajutorul lor! Becuri inteligente, termostat, camere de supraveghere - totul controlat de pe telefon. <i>Consultanța</i> a fost gratuită și foarte utilă. Bravo!
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">CV</div>
+                            <div class="author-info">
+                                <h4>Cristian Vasilescu</h4>
+                                <p>Client Rezidențial • Ilfov</p>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- EVENTS TABLE -->
+            <section class="events-section" id="proiecte">
+                <h2 class="section-title">📅 Evenimente &amp; Workshop-uri 2026</h2>
+                <div class="table-responsive">
+                    <table>
+                        <caption>Tabel Evenimente Tehnice &amp; Lansări de Produse Future Digital Technology</caption>
+                        <thead>
+                            <tr>
+                                <th>Eveniment</th>
+                                <th>Data</th>
+                                <th>Locație</th>
+                                <th>Tehnologie</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Workshop Smart Home</b> pentru Începători</td>
+                                <td><time datetime="2026-04-15">15 Aprilie 2026</time></td>
+                                <td>Str. Academiei 14, București</td>
+                                <td><abbr title="Internet of Things">IoT</abbr>, Automatizare Casă</td>
+                                <td>Locuri Disponibile</td>
+                            </tr>
+                            <tr>
+                                <td>Lansare <b>Receptoare 8K UHD</b></td>
+                                <td><time datetime="2026-05-10">10 Mai 2026</time></td>
+                                <td>Showroom Principal</td>
+                                <td>Satelit 8K, DVB-S2X</td>
+                                <td>Confirmat</td>
+                            </tr>
+                            <tr>
+                                <td>Demonstrație <b>WiFi 7</b> &amp; Mesh Advanced</td>
+                                <td><time datetime="2026-05-22">22 Mai 2026</time></td>
+                                <td>Online Webinar</td>
+                                <td>WiFi 7, Rețelistică</td>
+                                <td>Înscrieri Deschise</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><b>Săptămâna Tehnologiei IT</b></td>
+                                <td>1-3 Iunie 2026</td>
+                                <td rowspan="2">Centru Expoziții București</td>
+                                <td>Gaming PC, Laptopuri</td>
+                                <td>Programat</td>
+                            </tr>
+                            <tr>
+                                <td>4-5 Iunie 2026</td>
+                                <td>Servere, Stocare Enterprise</td>
+                                <td>Programat</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>PROMOȚIE SPECIALĂ:</strong> Black Friday IT &amp; Elektronice</td>
+                                <td><time datetime="2026-11-27">27 Noiembrie</time></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="4">Total Evenimente Planificate în 2026</th>
+                                <td>12 Evenimente</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SUBSCRIPTIONS SECTION -->
+            <section class="subscriptions-section" id="subscriptions">
+                <h2 class="section-title">📺 Abonamente TV Satelit</h2>
+                <div class="subscriptions-grid">
+                    
+                    <article class="subscription-card">
+                        <div class="subscription-icon">📡</div>
+                        <h3 class="subscription-name">Focus Sat Premium</h3>
+                        <div class="subscription-price">35 RON<span style="font-size: 1rem;">/lună</span></div>
+                        <ul class="subscription-features">
+                            <li>✓ Peste 150 de <b>canale HD</b></li>
+                            <li>✓ Canale <b>sport</b> și <b>filme</b></li>
+                            <li>✓ Suport tehnic inclus</li>
+                            <li>✓ Instalare gratuită*</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addSubscriptionToCart('Focus Sat Premium', 35)">
+                            <i class="fas fa-shopping-cart"></i> Adaugă în Coș
+                        </button>
+                    </article>
+
+                    <article class="subscription-card">
+                        <div class="subscription-icon">📺</div>
+                        <h3 class="subscription-name">Digi Romania</h3>
+                        <div class="subscription-price">25 RON<span style="font-size: 1rem;">/lună</span></div>
+                        <ul class="subscription-features">
+                            <li>✓ 120+ canale diverse</li>
+                            <li>✓ Canale pentru <b>copii</b></li>
+                            <li>✓ Calitate HD garantată</li>
+                            <li>✓ Fără contract pe termen lung</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addSubscriptionToCart('Digi Romania', 25)">
+                            <i class="fas fa-shopping-cart"></i> Adaugă în Coș
+                        </button>
+                    </article>
+
+                    <article class="subscription-card">
+                        <div class="subscription-icon">🌍</div>
+                        <h3 class="subscription-name">Sky Media UK</h3>
+                        <div class="subscription-price">£20<span style="font-size: 1rem;">/lună</span></div>
+                        <ul class="subscription-features">
+                            <li>✓ Canale internaționale UK</li>
+                            <li>✓ <b>Sport premium</b> (Premier League)</li>
+                            <li>✓ Filme și documentare</li>
+                            <li>✓ Streaming disponibil</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addSubscriptionToCart('Sky Media UK', '£20')">
+                            <i class="fas fa-shopping-cart"></i> Adaugă în Coș
+                        </button>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- GOOGLE MAPS IFRAME (BONUS) -->
+            <section class="image-map-section" id="locatie-maps">
+                <h2 class="section-title">📍 Locația Showroom-ului Nostru</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Vizitează-ne la sediul din București, Str. Academiei 14:</p>
+                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8060214614845!2d26.099835476531814!3d44.43622197107158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff4770a6f5d5%3A0x49e601e8cc909c71!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83%2C%20Universitatea%20din%20Bucure%C8%99ti!5e0!3m2!1sro!2sro!4v1234567890123!5m2!1sro!2sro" width="100%" height="450" style="border:2px solid var(--primary-blue); border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section class="contact-section" id="contact">
+                <h2 class="section-title">📞 Contactează-ne</h2>
+                <div class="contact-grid">
+                    
+                    <aside class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt info-icon"></i>
+                            <div class="info-content">
+                                <h4>Adresa Magazin</h4>
+                                <address style="font-style: normal;">
+                                    <a href="https://maps.google.com/?q=Facultatea+de+Matematica+si+Informatica+Bucuresti" target="_blank">
+                                        Str. Academiei 14,<br>
+                                        București, Sector 1,<br>
+                                        România, 010014
+                                    </a>
+                                </address>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-phone info-icon"></i>
+                            <div class="info-content">
+                                <h4>Telefon</h4>
+                                <address style="font-style: normal;">
+                                    <a href="tel:+40722123456">+40 722 123 456</a>
+                                </address>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-envelope info-icon"></i>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <address style="font-style: normal;">
+                                    <a href="/cdn-cgi/l/email-protection#aac9c5c4decbc9deeaccdfdedfd8cfcede84d8c5"><span class="__cf_email__" data-cfemail="23404c4d574240576345565756514647570d514c">[email&#160;protected]</span></a>
+                                </address>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-clock info-icon"></i>
+                            <div class="info-content">
+                                <h4>Program</h4>
+                                <p>Luni - Vineri: 09:00 - 18:00<br>Sâmbătă: 10:00 - 14:00</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item" style="background: var(--gradient-primary); border-color: var(--primary-blue);">
+                            <i class="fas fa-briefcase info-icon" style="color: white;"></i>
+                            <div class="info-content">
+                                <h4 style="color: white;">🔥 <strong>ANGAJĂM!</strong></h4>
+                                <p style="color: rgba(255,255,255,0.9);">Căutăm <b>Tehnician Instalări Satelit</b>. Trimite CV la <a href="/cdn-cgi/l/email-protection#d2b8bdb0a192b4a7a6a7a0b7b6a6fca0bd" style="color: white; text-decoration: underline;"><span class="__cf_email__" data-cfemail="dbb1b4b9a89bbdaeafaea9bebfaff5a9b4">[email&#160;protected]</span></a></p>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nume Complet *</label>
+                            <input type="text" id="name" name="name" required placeholder="Ex: Ion Popescu">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="exemplu@email.ro">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+40 7XX XXX XXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subiect</label>
+                            <select id="subject" name="subject">
+                                <option value="informatii">Solicit Informații Produse</option>
+                                <option value="instalare">Instalare &amp; Service</option>
+                                <option value="oferta">Solicit Ofertă Personalizată</option>
+                                <option value="reclamatie">Reclamație / Garanție</option>
+                                <option value="job">Aplicare Job (Angajare)</option>
+                                <option value="altele">Altele</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mesaj *</label>
+                            <textarea id="message" name="message" required placeholder="Descrie cererea ta aici..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Trimite Mesaj
+                        </button>
+                    </form>
+
+                </div>
+            </section>
+
+            <!-- SIMILAR SITES -->
+            <section class="similar-sites">
+                <h2 class="section-title">🔗 Site-uri Partenere &amp; Similare</h2>
+                <div class="sites-grid">
+                    
+                    <a href="https://www.elstar.ro" target="_blank" class="site-card">
+                        <div class="site-icon">🛒</div>
+                        <h4 class="site-name">Elstar.ro</h4>
+                        <p class="site-description">Magazin de <b>electronică</b> cu gamă largă de produse. Ușor de navigat, filtrare bună.</p>
+                    </a>
+
+                    <a href="https://www.satmultimedia.ro" target="_blank" class="site-card">
+                        <div class="site-icon">📡</div>
+                        <h4 class="site-name">Satmultimedia</h4>
+                        <p class="site-description">Specialist în <b>sisteme satelit</b>. Comunicare rapidă, echipă de profesioniști.</p>
+                    </a>
+
+                    <a href="https://tehnicb.ro" target="_blank" class="site-card">
+                        <div class="site-icon">⚡</div>
+                        <h4 class="site-name">TehnicB</h4>
+                        <p class="site-description">Componente <b>electronice</b> și sisteme IT. Promptitudine la comenzi.</p>
+                    </a>
+
+                    <a href="https://www.mondoplast.ro/satelit" target="_blank" class="site-card">
+                        <div class="site-icon">💰</div>
+                        <h4 class="site-name">MondoPlast</h4>
+                        <p class="site-description">Preț bun la echipamente <b>satelit</b>. Gamă variată de produse.</p>
+                    </a>
+
+                    <a href="https://peruvision.ro" target="_blank" class="site-card">
+                        <div class="site-icon">🚀</div>
+                        <h4 class="site-name">Peruvision</h4>
+                        <p class="site-description">Produse <b>premium</b>, actualizări frecvente. <b>Livrare rapidă</b> garantată.</p>
+                    </a>
+
+                </div>
+            </section>
+
+        </div>
+
+    <!-- LINK-TOP: Triunghi cu bază rotundă ÎNĂUNTRUL rombului (CERINȚĂ ETAPA 2 - A5) -->
+    <a href="#top" id="link-top" class="visible" aria-label="Înapoi sus">
+        <div class="link-square">
+            <div class="link-triangle"></div>
+        </div>
+    </a>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            
+            <div class="footer-section">
+                <h4>Future Digital Technology</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    Specialized in <b>electronics</b>, <b>satellite systems</b> and <b>IT infrastructure</b>. Professional service and specialized consultancy.
+                </p>
+                <p>
+                    📧 <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#7d1e1213091c1e093d1b0809080f1809181e15530f12"><span class="__cf_email__" data-cfemail="3f5c50514b5e5c4b7f594a4b4a4d5a4b5a5c57114d50">[email&#160;protected]</span></a>
+                </p>
+                <p>
+                    📞 <strong>Tel:</strong> <a href="tel:+40722123456">+40 722 123 456</a>
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Linkuri Rapide</h4>
+                <ul>
+                    <li><a href="#home">Acasă</a></li>
+                    <li><a href="#categories">Categorii Produse</a></li>
+                    <li><a href="#subscriptions">Abonamente TV</a></li>
+                    <li><a href="#evenimente">Evenimente</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Categorii Produse</h4>
+                <ul>
+                    <li><a href="javascript:openCategoryPage('satelit')">Receptoare Satelit</a></li>
+                    <li><a href="javascript:openCategoryPage('it')">Calculatoare &amp; IT</a></li>
+                    <li><a href="javascript:openCategoryPage('electronica')">Smart Home</a></li>
+                    <li><a href="javascript:openCategoryPage('service')">Service Tehnic</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+                    <a href="#" style="color: var(--primary-blue);" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: var(--primary-blue);" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: var(--primary-blue);" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/40722123456" style="color: var(--success-green);" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <address style="font-style: normal; margin-bottom: 1rem;">
+                <a href="#top">↑ Mergi la începutul paginii</a>
+            </address>
+            
+            <p>
+                <small>
+                    &copy; 2026 Future Digital Technology. Toate drepturile rezervate. | 
+                    Design by <strong>Chiriac Ciprian-Mihai</strong> | 
+                    Creat: <time datetime="2026-03-27">27 martie 2026</time>
+                </small>
+            </p>
+        </div>
+    </footer>
+
+    <!-- SHOPPING CART ICON -->
+    <div class="cart-icon" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+    </div>
+
+    <!-- SHOPPING CART PANEL -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Coșul Meu</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Coșul tău este gol</p>
+            </div>
+        </div>
+        <div class="cart-summary" id="cartSummary" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0 RON</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">
+                <i class="fas fa-credit-card"></i> Finalizează Comanda
+            </button>
+        </div>
+    </div>
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/40722123456?text=Bună!%20Aș%20dori%20informații%20despre%20produsele%20dvs." target="_blank" class="whatsapp-btn" title="Contact WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- BACK TO TOP - DESIGN VECHI (Triunghi în Romb) -->
+    <a href="#top" id="link-top" aria-label="Mergi sus" onclick="scrollToTop(); return false;">
+        <div id="triunghi"></div>
+        <span class="tooltip-text" style="display: none;">Mergi sus</span>
+    </a>
+
+    <!-- NOTIFICATION -->
+    <div class="notification" id="notification"></div>
+
+    <!-- JAVASCRIPT -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // ===============================================
+        // PRODUCTS DATABASE
+        // ===============================================
+        const productsData = {
+            receptoare: [
+                {
+                    id: 'rec1',
+                    name: 'Receptor Satelit 4K UHD Enigma2',
+                    image: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=500',
+                    price: 450,
+                    badge: 'TOP',
+                    specs: ['Rezoluție 4K UHD', 'Linux Enigma2', 'DVB-S2X', '2GB RAM', 'WiFi integrat', 'USB 3.0']
+                },
+                {
+                    id: 'rec2',
+                    name: 'Receptor HD Focus Sat',
+                    image: 'https://images.unsplash.com/photo-1558089687-5e35c1c2c96c?w=500',
+                    price: 199,
+                    badge: 'POPULAR',
+                    specs: ['Full HD 1080p', 'EPG complet', 'USB Recording', 'HDMI Output', 'Telecomandă inclusă', 'Garanție 2 ani']
+                },
+                {
+                    id: 'rec3',
+                    name: 'Receptor Android TV Box 4K',
+                    image: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=500',
+                    price: 350,
+                    specs: ['Android 11', '4K@60fps', '4GB RAM', '32GB Storage', 'Google Play', 'Chromecast built-in']
+                },
+                {
+                    id: 'rec4',
+                    name: 'Combo Satelit + IPTV',
+                    image: 'https://images.unsplash.com/photo-1585174248054-4bfd0f61c916?w=500',
+                    price: 520,
+                    badge: 'NOU',
+                    specs: ['Dual tuner', 'IPTV support', 'WiFi 6', 'Bluetooth 5.0', '1TB HDD inclus', 'Premium design']
+                },
+                {
+                    id: 'rec5',
+                    name: 'Receptor CI+ Module Compatible',
+                    image: 'https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=500',
+                    price: 280,
+                    specs: ['CI+ slot', 'HD ready', 'Parental control', 'Multi-language', 'Low power', 'Compact size']
+                },
+                {
+                    id: 'rec6',
+                    name: 'Receiver Pro 8K Ready',
+                    image: 'https://images.unsplash.com/photo-1593784991011-be58f98f036e?w=500',
+                    price: 750,
+                    badge: 'PREMIUM',
+                    specs: ['8K ready', 'HEVC codec', 'HDR10+', 'Dolby Atmos', 'Gigabit LAN', 'Premium build']
+                }
+            ]
+        };
+
+        // ===============================================
+        // CATEGORY PAGE OPENER
+        // ===============================================
+        function openCategoryPage(categoryName) {
+            alert(`Funcționalitate în dezvoltare!\n\nAici se va deschide pagina cu capitolele categoriei: ${categoryName.toUpperCase()}\n\nÎn momentul de față, poți vedea toate produsele mai jos pe pagină.`);
+            const firstSection = document.querySelector('.products-section');
+            if (firstSection) {
+                firstSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // ===============================================
+        // RENDER PRODUCTS
+        // ===============================================
+        function renderProducts(category, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const products = productsData[category];
+            if (!products) return;
+
+            container.innerHTML = products.map(product => `
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">${product.name}</h4>
+                        <div class="product-price">${product.price} RON</div>
+                        <button class="add-to-cart-btn" onclick='addToCart(${JSON.stringify(product)})'>
+                            <i class="fas fa-shopping-cart"></i> Adaugă în Coș
+                        </button>
+                    </div>
+                    <div class="product-tooltip">
+                        <h5 class="tooltip-title">${product.name}</h5>
+                        <ul class="tooltip-specs">
+                            ${product.specs.map(spec => `<li>${spec}</li>`).join('')}
+                        </ul>
+                        <div class="tooltip-price">${product.price} RON</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        renderProducts('receptoare', 'receptoare-grid');
+
+        // ===============================================
+        // SHOPPING CART FUNCTIONALITY
+        // ===============================================
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartSummary = document.getElementById('cartSummary');
+            const cartTotal = document.getElementById('cartTotal');
+
+            cartCount.textContent = cart.length;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Coșul tău este gol</p>
+                    </div>
+                `;
+                cartSummary.style.display = 'none';
+            } else {
+                cartItems.innerHTML = cart.map((item, index) => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">${item.price}</div>
+                        </div>
+                        <button class="remove-item" onclick="removeFromCart(${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `).join('');
+
+                const total = cart.reduce((sum, item) => {
+                    const price = typeof item.price === 'number' ? item.price : 0;
+                    return sum + price;
+                }, 0);
+
+                cartTotal.textContent = `${total} RON`;
+                cartSummary.style.display = 'block';
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function addToCart(product) {
+            cart.push(product);
+            updateCartUI();
+            showNotification(`✓ ${product.name} adăugat în coș!`);
+        }
+
+        function addSubscriptionToCart(name, price) {
+            const subscription = {
+                id: 'sub_' + Date.now(),
+                name: name,
+                price: price,
+                image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200'
+            };
+            cart.push(subscription);
+            updateCartUI();
+            showNotification(`✓ Abonament ${name} adăugat în coș!`);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+            showNotification('Produs eliminat din coș');
+        }
+
+        function toggleCart() {
+            const cartPanel = document.getElementById('cartPanel');
+            cartPanel.classList.toggle('active');
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                showNotification('⚠️ Coșul este gol!');
+                return;
+            }
+            showNotification('🎉 Funcționalitate în dezvoltare! Veți fi contactat telefonic.');
+            setTimeout(() => {
+                cart = [];
+                updateCartUI();
+                toggleCart();
+            }, 2000);
+        }
+
+        updateCartUI();
+
+        // ===============================================
+        // NOTIFICATION SYSTEM
+        // ===============================================
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===============================================
+        // CONTACT FORM
+        // ===============================================
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            console.log('Form submitted:', formData);
+            showNotification('✓ Mesaj trimis cu succes! Vă vom contacta în curând.');
+            
+            this.reset();
+        });
+
+        // ===============================================
+        // BACK TO TOP BUTTON
+        // ===============================================
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('link-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // ===============================================
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        // ===============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#home' && !href.includes('javascript:')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Close cart when clicking outside
+        document.addEventListener('click', function(e) {
+
+    <!-- ====================================================
+         ETAPA 3 - JAVASCRIPT PENTRU MENIU
+         ==================================================== -->
+    <script>
+/* ===============================================
+   ETAPA 3 - JavaScript pentru Meniu
+   Funcționalitate Hamburger & Submeniu Mobil
+   =============================================== */
+
+// DOM Ready
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ============================================
+    // HAMBURGER MENU TOGGLE
+    // ============================================
+    
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (burgerMenu && navMenu) {
+        burgerMenu.addEventListener('click', function() {
+            // Toggle active class
+            burgerMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Update aria-expanded pentru accesibilitate
+            const isExpanded = burgerMenu.classList.contains('active');
+            burgerMenu.setAttribute('aria-expanded', isExpanded);
+            
+            // Previne scroll când meniul e deschis pe mobil
+            if (isExpanded) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+    }
+    
+    
+    // ============================================
+    // SUBMENU TOGGLE PE MOBIL
+    // ============================================
+    
+    const menuItems = document.querySelectorAll('.nav-menu > li');
+    
+    menuItems.forEach(item => {
+        const submenu = item.querySelector('ul');
+        
+        // Doar pentru itemele cu submeniu
+        if (submenu) {
+            const link = item.querySelector('> a');
+            
+            // Click pe link când e mobil
+            link.addEventListener('click', function(e) {
+                // Verifică dacă e mobil (hamburger vizibil)
+                const isMobile = window.getComputedStyle(burgerMenu).display !== 'none';
+                
+                if (isMobile) {
+                    // Previne navigarea
+                    e.preventDefault();
+                    
+                    // Toggle submeniu
+                    item.classList.toggle('submenu-open');
+                }
+            });
+        }
+    });
+    
+    
+    // ============================================
+    // ÎNCHIDE MENIU LA CLICK PE LINK (MOBIL)
+    // ============================================
+    
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Verifică dacă e link către secțiune (nu către altă pagină)
+            const href = link.getAttribute('href');
+            
+            if (href && href.startsWith('#')) {
+                // Verifică dacă e mobil
+                const isMobile = window.getComputedStyle(burgerMenu).display !== 'none';
+                
+                if (isMobile && !link.parentElement.querySelector('ul')) {
+                    // Închide meniul
+                    burgerMenu.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+    });
+    
+    
+    // ============================================
+    // RESIZE HANDLER - RESETARE LA DESKTOP
+    // ============================================
+    
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        // Debounce pentru performance
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            
+            const isMobile = window.getComputedStyle(burgerMenu).display !== 'none';
+            
+            // Dacă trecem la desktop, resetăm meniul
+            if (!isMobile) {
+                burgerMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                // Închide toate submeniurile
+                menuItems.forEach(item => {
+                    item.classList.remove('submenu-open');
+                });
+            }
+        }, 250);
+    });
+    
+    
+    // ============================================
+    // ACTIVE LINK HIGHLIGHTING
+    // ============================================
+    
+    // Marchează linkul activ bazat pe scroll position
+    function updateActiveLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollY = window.pageYOffset;
+        
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                // Găsește linkul corespunzător
+                const activeLink = document.querySelector(`.nav-menu a[href="#${sectionId}"]`);
+                
+                // Elimină clasa active de la toate linkurile
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Adaugă clasa active la linkul curent
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    }
+    
+    // Scroll event cu throttle pentru performance
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+                updateActiveLink();
+                scrollTimeout = null;
+            }, 100);
+        }
+    });
+    
+    // Apelează la încărcare
+    updateActiveLink();
+    
+    
+    // ============================================
+    // SMOOTH SCROLL PENTRU LINKURI INTERNE
+    // ============================================
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Ignore dacă e doar "#"
+            if (href === '#') return;
+            
+            const target = document.querySelector(href);
+            
+   
