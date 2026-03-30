@@ -1,0 +1,41 @@
+{
+  "name": "future-digital-technology",
+  "version": "1.0.0",
+  "description": "Site web profesional pentru electronică, satelit și IT - Proiect Tehnici Web ETAPA 1+2+3",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass menu.scss menu.css",
+    "sass:watch": "sass --watch menu.scss:menu.css",
+    "build": "sass menu.scss menu.css --style compressed",
+    "start": "npm run sass:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanssick/Future---Digital---Technology.git"
+  },
+  "keywords": [
+    "html5",
+    "css3",
+    "sass",
+    "scss",
+    "responsive",
+    "web-design",
+    "javascript",
+    "satelit",
+    "electronica",
+    "IT"
+  ],
+  "author": "Chiriac Ciprian-Mihai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hanssick/Future---Digital---Technology/issues"
+  },
+  "homepage": "https://hanssick.github.io/Future---Digital---Technology/",
+  "devDependencies": {
+    "sass": "^1.77.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
